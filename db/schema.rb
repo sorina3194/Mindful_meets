@@ -17,9 +17,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_150919) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "username", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.datetime "birthday", null: false
+    t.integer "min_age", null: false
+    t.integer "max_age", null: false
+    t.text "biography", null: false
+    t.string "skills", null: false
+    t.string "city", null: false
+    t.string "hobbies", null: false
+    t.string "music_genres", null: false
+    t.string "book_genres", null: false
+    t.string "movie_genres", null: false
+    t.string "favorite_animal", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
