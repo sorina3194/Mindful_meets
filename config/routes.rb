@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :invitations, only: %i[new create index show destroy]
   end
 
-  resources :feedbacks, only: %i[new create]
+  # resources :feedbacks, only: %i[new create]
 
   # TODO: Chat
   # resources :private_chats, only: %i[show create]
