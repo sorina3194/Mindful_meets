@@ -10,18 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_134256) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_131137) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "feedbacks", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id", null: false
-    t.bigint "target_user_id", null: false
+  create_table "chat_sessions", force: :cascade do |t|
+    t.integer "invitations_count", default: 0
+    t.string "video_chat_link"
+    t.string "status", default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["target_user_id"], name: "index_feedbacks_on_target_user_id"
-    t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,7 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_134256) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
   add_foreign_key "feedbacks", "users"
   add_foreign_key "feedbacks", "users", column: "target_user_id"
 end
