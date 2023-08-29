@@ -93,7 +93,7 @@ zuzanna.photo.attach(io: file, filename: "zuzanna.png", content_type: "image/png
 zuzanna.save
 puts "#{User.count} users in database"
 
-file = URI.open("https://images.unsplash.com/photo-1608889825146-c9276dc26bdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80")
+file = URI.open("https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80")
 nessim = User.new(
   first_name: "Nessim",
   last_name: "Khayyat",
