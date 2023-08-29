@@ -2,14 +2,13 @@ class ChatSessionController < ApplicationController
   before_action :set_chat_session, only: [:show]
 
   def create
-    raise
     @chat_session = ChatSession.create
     # Select 3 random users for invitations (example query)
     random_users = User.order("RANDOM()").limit(3)
     random_users.each do |user|
-      Invitation.create(chat_session: @chat_session, invited: current_user, invitee: user, status: 'pending')
+      Invitation.create(chat_sessions_id: @chat_session.id, inviter: current_user, invitee: user, status: 'pending')
     end
-    redirect_to chat_session_path
+    redirect_to chat_session_path(@chat_session.id)
   end
 
   def index
