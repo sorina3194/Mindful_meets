@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :chat_sessions, only: %i[create show] do
-    resources :invitations, only: %i[new create index show destroy]
+
+  post '/chat_session', to: 'chat_session#create', as: :chat_session_create
+
+  resources :chat_session, only: %i[index create show] do
+    resources :invitation, only: %i[new create index show destroy]
   end
-  post '/chat_sessions', to: 'chat_sessions#create'
+
   resources :friendships, only: %i[index create destroy]
   resources :feedbacks, only: %i[new create]
 

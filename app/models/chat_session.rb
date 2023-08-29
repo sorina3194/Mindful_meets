@@ -5,5 +5,5 @@ class ChatSession < ApplicationRecord
   # validates :video_chat_link, presence: true
 
   # Add counter cache to track invitations count
-  counter_cache :invitations_count
+  # counter_cache :invitations_count
 end

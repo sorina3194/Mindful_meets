@@ -15,10 +15,12 @@ export default class extends Controller {
 
   async createChatSession() {
     try {
-      const response = await fetch('/chat_sessions', {
+      const response = await fetch('/chat_session', {
         method: 'POST',
+        credentials: 'include',
         headers: {
-          'Content-Type': 'application/json'}
+          'Content-Type': 'application/json',
+        }
       });
     } catch (error) {
       console.error('An error occurred:', error);
