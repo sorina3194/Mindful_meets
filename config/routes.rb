@@ -1,41 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :friendships, only: [:show, :new, :create, :destroy]
+  resources :friendships, only: %i[index create destroy]
+  resources :chat_sessions, only: %i[create index show]
 
-  # friendships show
-  # friendships new ??
-  # friendships create
-  # friendships destroy
-
-
-  resources :chatSessions, only: [:new, :create, :index,:show]
-
-  # chatsessions new
-  # chatsessions create
-  # chatsessions show
-  # OR LIKE THIS:
-
-  resources :chatSessions do
-    resources :invitations, only: [:new, :create, :index, :show]
+  resources :chat_sessions do
+    resources :invitations, only: %i[new create index show destroy]
   end
-  # invitations new and create
-  # invitations show sent and received
-  # invitations destroy
 
+  resources :feedbacks, only: %i[new create]
 
-  resources :feedbacks, only: [:new, :create]
-
-  # feedbacks new
-  # feedbacks create
-
-  resources :users, only: [:show, :update]
-
-  # users show
-  # users update
-
-  resources :privateChats, :only [:show, :create]
-
+  # TODO: Chat
+  # resources :private_chats, only: %i[show create]
   # privateChats show
   # privateChats create
 end

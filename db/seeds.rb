@@ -8,8 +8,8 @@ require 'faker'
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-puts 'Creating 20 fake users...'
-20.times do
+puts 'Creating 30 fake users...'
+30.times do
   user = User.new(
     # avatar: Faker::Avatar.image,
     first_name: Faker::Name.first_name,
@@ -23,11 +23,11 @@ puts 'Creating 20 fake users...'
     biography: Faker::Lorem.sentences(number: 2),
     skills: [""].sample,
     city: Faker::Address.city,
-    hobbies: Faker::Hobby,
-    music_genres: Faker::Music,
-    book_genres: Faker::Book,
-    movie_genres: Faker::Movie,
-    favorite_animal: Faker::Creature::Animal
+    hobbies: Faker::Hobby.activity,
+    music_genres: Faker::Music.genre,
+    book_genres: Faker::Book.genre,
+    movie_genres: Faker::Movie.title,
+    favorite_animal: Faker::Creature::Animal.name
   )
   user.save!
 end
