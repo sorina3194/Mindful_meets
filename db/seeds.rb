@@ -41,8 +41,6 @@ url = [
 ]
 
 id = 0
-
-puts 'Creating 30 fake users...'
 30.times do
   user = User.new(
     first_name: Faker::Name.first_name,
@@ -71,7 +69,7 @@ end
 
 puts "Creating four real users 🧜🏻‍♂️ 💃 👱🏼‍♀️ 😍"
 
-file = URI.open("https://images.unsplash.com/photo-1608889453743-bf8eabeb12fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80")
+file = URI.open("https://kitt.lewagon.com/placeholder/users/zuzannadobak")
 zuzanna = User.new(
   first_name: "Zuzanna",
   last_name: "Dobak",
@@ -93,7 +91,7 @@ zuzanna.photo.attach(io: file, filename: "zuzanna.png", content_type: "image/png
 zuzanna.save
 puts "#{User.count} users in database"
 
-file = URI.open("https://images.unsplash.com/photo-1608889825146-c9276dc26bdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80")
+file = URI.open("https://kitt.lewagon.com/placeholder/users/nessimkh")
 nessim = User.new(
   first_name: "Nessim",
   last_name: "Khayyat",
@@ -115,7 +113,7 @@ nessim.photo.attach(io: file, filename: "nessim.png", content_type: "image/png")
 nessim.save
 puts "#{User.count} users in database"
 
-file = URI.open("https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80")
+file = URI.open("https://kitt.lewagon.com/placeholder/users/sorina3194")
 sorina = User.new(
   first_name: "Sorina",
   last_name: "Tudor",
@@ -137,7 +135,7 @@ sorina.photo.attach(io: file, filename: "sorina.png", content_type: "image/png")
 sorina.save
 puts "#{User.count} users in database"
 
-file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+file = URI.open("https://kitt.lewagon.com/placeholder/users/emmvs")
 emma = User.new(
   first_name: "Emma",
   last_name: "Ruenzel",
