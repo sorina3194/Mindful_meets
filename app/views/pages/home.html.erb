@@ -1,1 +1,4 @@
 <h1>Welcome to the Mindful Meets Homepage 🔮</h1>
+<button data-controller="chat-session" data-action="click->chat-session#startChat" data-chat-session-target="button" class="btn btn-primary">Start Chat</button>
+
+<%= button_to "Call ChatController#create", chat_session_create_path(), class: "btn btn-primary" %>
