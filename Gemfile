@@ -78,6 +78,6 @@ group :test do
 end
 
 # External Gems
-gem "devise" 
+gem "devise"
 gem "faker"
 gem "cloudinary"

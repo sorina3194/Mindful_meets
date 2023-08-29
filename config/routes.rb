@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  # Define your appication routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :friendships, only: %i[index create destroy]
+  resources :chat_sessions, only: %i[create index show]
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-  # resources :users, only: [:home, :new, :create, :show]
-  # resources :users do
-  #   resources :friendship, only: [:home, :new, :create, :show]
-  #   resources :invitations, only: [:home, :new, :create, :show]
-  #   resources :feedbacks, only: [:home, :new, :create, :show]
-  #   # resources :privateChats, only: [:home, :new, :create, :show]
-  # end
+  resources :chat_sessions do
+    resources :invitations, only: %i[new create index show destroy]
+  end
+
+  resources :feedbacks, only: %i[new create]
+
+  # TODO: Chat
+  # resources :private_chats, only: %i[show create]
+  # privateChats show
+  # privateChats create
 end

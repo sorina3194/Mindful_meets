@@ -42,6 +42,7 @@ url = [
 
 id = 0
 
+puts 'Creating 30 fake users...'
 30.times do
   user = User.new(
     first_name: Faker::Name.first_name,
