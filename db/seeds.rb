@@ -59,7 +59,6 @@ nessim.photo.attach(io: file, filename: "nessim.png", content_type: "image/png")
 nessim.save
 puts "#{Avatar.count} users in database"
 
-
 file = URI.open("https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80")
 sorina = Avatar.new(
   first_name: "Sorina",
@@ -73,9 +72,9 @@ puts "#{Avatar.count} users in database"
 
 file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
 avatar = Avatar.new(
-  first_name: "",
-  last_name: "",
-  email: "@",
+  first_name: "Firstavatar",
+  last_name: "Lastavatar",
+  email: "avatar@test.com",
   password: "123456"
 )
 avatar.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
