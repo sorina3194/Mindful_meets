@@ -3,4 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
+
+  has_many :feedbacks
+  has_many :feedbacks_received, class_name: 'Feedback', foreign_key: :target_user_id
 end
