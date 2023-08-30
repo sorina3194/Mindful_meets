@@ -15,7 +15,7 @@ export default class extends Controller {
 
   async createChatSession() {
     try {
-      const response = await fetch('/chat_session', {
+      const response = await fetch('/chat_sessions', {
         method: 'POST',
         credentials: 'include',
         headers: {

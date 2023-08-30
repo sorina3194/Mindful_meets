@@ -1,38 +1,39 @@
 <h1> <%= @profile.first_name %></h1>
-<%= link_to "Show Zuza's Profile", showprofile_path(current_user.id) %>
-
+  <% if current_user %>
+    <%= link_to "Edit profile", edit_user_registration_path(current_user) %>
+  <% end %>
 <label for="photo">Avatar</label>
-<h3><%= @profile.photo %>, <%= image = URI.open(url[id])%></h3>
+<h3><%#= @profile.photo %>, <%#= image = URI.open(url[id])%></h3>
 
 <label for="biography">Biography</label>
-<h3><%= @profile.biography %>, <%= Faker::Lorem.sentences(number: 2) %></h3>
+<h3><%#= @profile.biography %>, <%= Faker::Lorem.sentences(number: 2) %></h3>
 
 <label for="birthday">Age</label>
-<h3><%= @profile.birthday %>, <%= Faker::Time.between(from: 65.years.ago, to: 18.years.ago) %></h3>
+<h3><%#= @profile.birthday %>, <%= Faker::Time.between(from: 65.years.ago, to: 18.years.ago) %></h3>
 
 <label for="min_age">Range Age</label>
-<h3><%= @profile.min_age %>, <%= rand(20..30) %></h3>
+<h3><%#= @profile.min_age %>, <%= rand(20..30) %></h3>
 
 <label for="max_age">Range Age</label>
-<h3><%= @profile.max_age %>, <%= rand(50..60) %></h3>
+<h3><%#= @profile.max_age %>, <%= rand(50..60) %></h3>
 
 <label for="city">City</label>
-<h3><%= @profile.city %>, <%= Faker::Address.city %></h3>
+<h3><%#= @profile.city %>, <%= Faker::Address.city %></h3>
 
 <label for="favorite_animal">Favorite Animal</label>
-<h3><%= @profile.favorite_animal %>, <%= Faker::Creature::Animal.name %></h3>
+<h3><%#= @profile.favorite_animal %>, <%= Faker::Creature::Animal.name %></h3>
 
-<label for="hobbies">HOOBIES</label>
-<h3><%= @profile.hobbies %>, <%= Faker::Hobby.activity %></h3>
+<label for="hobbies">HOBBIES</label>
+<h3><%#= @profile.hobbies %>, <%= Faker::Hobby.activity %></h3>
 
 <label for="skills">SKILLS</label>
-<h3><%= @profile.skills %>, <%= [""] %></h3>
+<h3><%#= @profile.skills %>, <%= [""] %></h3>
 
 <label for="music">MUSIC</label>
-<h3><%= @profile.music %>, <%= Faker::Music.genre %></h3>
+<h3><%#= @profile.music %>, <%= Faker::Music.genre %></h3>
 
 <label for="books">BOOKS</label>
-<h3><%= @profile.books %>, <%= Faker::Book.genre %></h3>
+<h3><%#= @profile.books %>, <%= Faker::Book.genre %></h3>
 
-<label for="movie">MOVEI</label>
-<h3><%= @profile.movies %>, <%= Faker::Movie.title %></h3>
+<label for="movie">MOVIE</label>
+<h3><%#= @profile.movies %>, <%= Faker::Movie.title %></h3>

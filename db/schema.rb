@@ -65,10 +65,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_134709) do
     t.string "status"
     t.bigint "inviter_id", null: false
     t.bigint "invitee_id", null: false
-    t.bigint "chat_sessions_id", null: false
+    t.bigint "chat_session_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chat_sessions_id"], name: "index_invitations_on_chat_sessions_id"
+    t.index ["chat_session_id"], name: "index_invitations_on_chat_session_id"
     t.index ["invitee_id"], name: "index_invitations_on_invitee_id"
     t.index ["inviter_id"], name: "index_invitations_on_inviter_id"
   end
@@ -108,7 +108,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_134709) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "feedbacks", "users", column: "target_user_id"
-  add_foreign_key "invitations", "chat_sessions", column: "chat_sessions_id"
+  add_foreign_key "invitations", "chat_sessions"
   add_foreign_key "invitations", "users", column: "invitee_id"
   add_foreign_key "invitations", "users", column: "inviter_id"
 end

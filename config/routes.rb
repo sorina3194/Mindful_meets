@@ -16,7 +16,10 @@ Rails.application.routes.draw do
       end
     end
   end
-end
+ end
+
+
+
 
   # TODO: Chat
   # resources :private_chats, only: %i[show create]
