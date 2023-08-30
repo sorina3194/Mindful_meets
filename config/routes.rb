@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+    # registrations: 'users/registrations'
+  }
   root to: "pages#home"
   resources :friendships, only: %i[index create destroy]
   resources :chat_sessions, only: %i[create index show]
@@ -8,10 +11,9 @@ Rails.application.routes.draw do
     resources :invitations, only: %i[new create index show destroy]
   end
 
-  # resources :feedbacks, only: %i[new create]
 
   # TODO: Chat
   # resources :private_chats, only: %i[show create]
-  # privateChats show
-  # privateChats create
+  # resources :feedbacks, only: %i[new create]
+
 end
