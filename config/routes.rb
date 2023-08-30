@@ -17,8 +17,11 @@ Rails.application.routes.draw do
 
   post '/chat_session', to: 'chat_session#create', as: :chat_session_create
 
+  end
+
+
+
 
   # TODO: Chat
   # resources :private_chats, only: %i[show create]
   # resources :feedbacks, only: %i[new create]
-

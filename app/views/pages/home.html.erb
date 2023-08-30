@@ -1,3 +1,14 @@
+
+<h1>Welcome to the Mindful Meets Homepage 🔮</h1>
+
+<%#  this link is now hardcoded with current user but should point to my friends/invites %>
+<%= link_to "Show Zuza's Profile", showprofile_path(current_user.id) %>
+<%# <%= button_to "Call ChatController#create", chat_session_create_path(), class: "btn btn-primary" %>
+<%# <%= link_to "Delete",
+  user_path(@user),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete your profile?"}
+%>
+
 <div id = "homepage_whole">
 <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Tilt+Warp&display=swap" rel="stylesheet">
   <h1 id="mindful-header">mindful meets.</h1>
@@ -8,4 +19,5 @@
   <button id="chat_button" data-controller="chat-session" data-action="click->chat-session#startChat" data-chat-session-target="button" class="btn btn-primary">I want to curate my social destiny</button>
   <%= button_to "Let the universe decide", chat_session_create_path(), class: "btn btn-primary", id:"chat_button2" %>
 </div>
+
 
