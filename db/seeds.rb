@@ -45,7 +45,7 @@ id = 0
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    birthday: Faker::Time.between(from: 60.years.ago, to: 18.years.ago),
+    birthday: Faker::Time.between(from: 65.years.ago, to: 18.years.ago),
     username: Faker::Internet.username,
     email: Faker::Internet.email,
     password: "123456",
