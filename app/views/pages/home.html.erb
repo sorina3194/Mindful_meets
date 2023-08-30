@@ -1,4 +1,9 @@
-<h1>Welcome to the Mindful Meets Homepage 🔮</h1>
-<button data-controller="chat-session" data-action="click->chat-session#startChat" data-chat-session-target="button" class="btn btn-primary">Start Chat</button>
-
-<%= button_to "Call ChatController#create", chat_session_create_path(), class: "btn btn-primary" %>
+<div id = "homepage_whole">
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Tilt+Warp&display=swap" rel="stylesheet">
+  <h1 id="mindful-header">mindful meets.</h1>
+  <h6 id="mindful-subheader"> Connect with like-minded people<h6>
+  <p id="quote"> <i>This is the quote of the day. It’s profoundly deep and impressively verbose. Be changed, body and soul. </i></p>
+  <p id="philosopher"> ~ Palatable Philosopher </p>
+  <button id="chat_button" data-controller="chat-session" data-action="click->chat-session#startChat" data-chat-session-target="button" class="btn btn-primary">I want to curate my social destiny</button>
+  <%= button_to "Let the universe decide", chat_session_create_path(), class: "btn btn-primary", id:"chat_button2" %>
+</div>
