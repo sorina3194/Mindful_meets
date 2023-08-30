@@ -16,15 +16,23 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :birthday,
+    <%= f.input :first_name,
                 required: true %>
-    <%= f.input :last_login,
+    <%= f.input :last_name,
                 required: true %>
     <%= f.input :username,
                 required: true %>
+    <%= f.input :birthday,
+                required: true %>
     <%= f.input :biography,
                 required: true %>
-    <%= f.input :age_range,
+    <%= f.input :skills,
+                required: true %>
+    <%= f.input :hobbies,
+                required: true %>
+    <%= f.input :min_age,
+                required: true %>
+    <%= f.input :max_age,
                 required: true %>
     <%= f.input :city,
                 required: true %>
@@ -32,9 +40,9 @@
                 required: true %>
     <%= f.input :book_genres,
                 required: true %>
-    <%= f.input :movies_genres,
+    <%= f.input :movie_genres,
                 required: true %>
-    <%= f.input : :favorite_animal,
+    <%= f.input :favorite_animal,
                 required: true %>
   </div>
 
