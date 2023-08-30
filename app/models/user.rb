@@ -8,19 +8,22 @@ class User < ApplicationRecord
   has_many :invitations
   has_many :invitations_received, class_name: 'Invitation', foreign_key: :invitee_id
 
+  # comment validation out because of conflicts when adding new or changing users.
+  # We will add it on FRIDAY before demo!!!!
+  # and then again in the next week on the LAST DAY!!!!
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :username, presence: true
-  validates :birthday, presence: true
-  validates :biography, presence: true
-  validates :skills, presence: true
-  validates :hobbies, presence: true
-  validates :min_age, presence: true
-  validates :max_age, presence: true
-  validates :city, presence: true
-  validates :music_genres, presence: true
-  validates :book_genres, presence: true
-  validates :movie_genres, presence: true
-  validates :favorite_animal, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # validates :username, presence: true
+  # validates :birthday, presence: true
+  # validates :biography, presence: true
+  # validates :skills, presence: true
+  # validates :hobbies, presence: true
+  # validates :min_age, presence: true
+  # validates :max_age, presence: true
+  # validates :city, presence: true
+  # validates :music_genres, presence: true
+  # validates :book_genres, presence: true
+  # validates :movie_genres, presence: true
+  # validates :favorite_animal, presence: true
 end

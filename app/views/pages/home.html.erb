@@ -1,17 +1,9 @@
 <h1>Welcome to the Mindful Meets Homepage 🔮</h1>
 
-
-<%= link_to "Show Zuza's Profile", showprofile_path(31) %>
-  <%# <ul>
-    <% @user.each do |user| %>
-      <%# <li><%= link_to user.name, showprofile_path(user.id)</li> %>
-    <%# <% end %> 
-  <%# </ul> %>
-
-<%= link_to "Delete",
+<%#  this link is now hardcoded with current user but should point to my friends/invites %>
+<%= link_to "Show Zuza's Profile", showprofile_path(current_user.id) %>
+<%# <%= button_to "Call ChatController#create", chat_session_create_path(), class: "btn btn-primary" %>
+<%# <%= link_to "Delete",
   user_path(@user),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete your profile?"}
 %>
-
-<%= button_to "Call ChatController#create", chat_session_create_path(), class: "btn btn-primary" %>
-

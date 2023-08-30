@@ -40,8 +40,13 @@ url = [
   "https://kitt.lewagon.com/placeholder/users/eduroldani"
 ]
 
+  # change the users from 30 to 5 because of 'conflicts' with faker;
+  # faker is complaining we are using it to much and giving us errors;
+  # We will add it on FRIDAY before demo!!!!
+  # and then again in the next week on the LAST DAY!!!!
+
 id = 0
-30.times do
+5.times do
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -52,7 +57,7 @@ id = 0
     min_age: rand(20..30),
     max_age: rand(50..60),
     biography: Faker::Lorem.sentences(number: 2),
-    skills: ["eating", "coding", "sometimes yoga, but very seldomly", "sleeping"].sample,
+    skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
     city: Faker::Address.city,
     hobbies: Faker::Hobby.activity,
     music_genres: Faker::Music.genre,
@@ -77,9 +82,9 @@ zuzanna = User.new(
   max_age: 56,
   biography: "Hello, I'm Zuzanna 🙋🏽‍♀️",
   birthday: Faker::Date.birthday(min_age: 18, max_age: 60),
-  skills: ["eating", "coding", "sometimes yoga, but very seldomly", "sleeping"].sample,
+  skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   city: "Berlin",
-  hobbies: ["eating", "coding", "sometimes yoga, but very seldomly", "sleeping"].sample,
+  hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   music_genres: ["Metal", "Psy Trance", "Classic", "HipHop😎", "Rock🤘"].sample,
   book_genres: ["Romance", "Crime", "Classics"].sample,
   movie_genres: ["Romance", "Crime", "Classics", "Action"].sample,
@@ -99,9 +104,9 @@ nessim = User.new(
   birthday: Faker::Time.between(from: 60.years.ago, to: 18.years.ago),
   min_age: 18,
   max_age: 30,
-  skills: ["eating", "coding", "sometimes yoga, but very seldomly", "sleeping"].sample,
+  skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   city: "Berlin",
-  hobbies: ["eating", "coding", "sometimes yoga, but very seldomly", "sleeping"].sample,
+  hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   music_genres: ["Metal", "Psy Trance", "Classic", "HipHop😎", "Rock🤘"].sample,
   book_genres: ["Romance", "Crime", "Classics"].sample,
   movie_genres: ["Romance", "Crime", "Classics", "Action"].sample,
@@ -121,9 +126,9 @@ sorina = User.new(
   birthday: Faker::Time.between(from: 60.years.ago, to: 18.years.ago),
   min_age: 25,
   max_age: 56,
-  skills: ["eating", "coding", "sometimes yoga, but very seldomly", "sleeping"].sample,
+  skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   city: "Berlin",
-  hobbies: ["eating", "coding", "sometimes yoga, but very seldomly", "sleeping"].sample,
+  hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   music_genres: ["Metal", "Psy Trance", "Classic", "HipHop😎", "Rock🤘"].sample,
   book_genres: ["Romance", "Crime", "Classics"].sample,
   movie_genres: ["Romance", "Crime", "Classics", "Action"].sample,
@@ -142,9 +147,9 @@ emma = User.new(
   birthday: Faker::Time.between(from: 60.years.ago, to: 18.years.ago),
   min_age: 25,
   max_age: 65,
-  skills: ["eating", "coding", "sometimes yoga, but very seldomly", "sleeping"].sample,
+  skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   city: "Berlin",
-  hobbies: ["eating", "coding", "sometimes yoga, but very seldomly", "sleeping"].sample,
+  hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   music_genres: ["Metal", "Psy Trance", "Classic", "HipHop😎", "Rock🤘"].sample,
   book_genres: ["Romance", "Crime", "Classics"].sample,
   movie_genres: ["Romance", "Crime", "Classics", "Action"].sample,

@@ -29,7 +29,6 @@ class PagesController < ApplicationController
 
 # end
 
-
 # private
 
 #   def user_profile
