@@ -1,4 +1,17 @@
 <h1>Welcome to the Mindful Meets Homepage 🔮</h1>
-<button data-controller="chat-session" data-action="click->chat-session#startChat" data-chat-session-target="button" class="btn btn-primary">Start Chat</button>
+
+
+<%= link_to "Show Zuza's Profile", showprofile_path(31) %>
+  <%# <ul>
+    <% @user.each do |user| %>
+      <%# <li><%= link_to user.name, showprofile_path(user.id)</li> %>
+    <%# <% end %> 
+  <%# </ul> %>
+
+<%= link_to "Delete",
+  user_path(@user),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete your profile?"}
+%>
 
 <%= button_to "Call ChatController#create", chat_session_create_path(), class: "btn btn-primary" %>
+

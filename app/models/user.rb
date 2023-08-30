@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :invitations
   has_many :invitations_received, class_name: 'Invitation', foreign_key: :invitee_id
 
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true

@@ -23,3 +23,4 @@ class InvitationsController < ApplicationController
     @invitation = Invitation.find(params[:id])
   end
 end
+
