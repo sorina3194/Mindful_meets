@@ -4,7 +4,42 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :first_name,
+                required: true %>
+    <%= f.input :last_name,
+                required: true %>
+    <%= f.input :username,
+                required: true %>
+    <%= f.input :birthday,
+                required: true %>
+    <%= f.input :biography,
+                required: true %>
+    <%= f.input :skills,
+                required: true %>
+    <%= f.input :hobbies,
+                required: true %>
+    <%= f.input :min_age,
+                required: true %>
+    <%= f.input :max_age,
+                required: true %>
+    <%= f.input :city,
+                required: true %>
+    <%= f.input :music_genres,
+                required: true %>
+    <%= f.input :book_genres,
+                required: true %>
+    <%= f.input :movie_genres,
+                required: true %>
+    <%= f.input :favorite_animal,
+                required: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
