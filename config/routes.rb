@@ -4,20 +4,22 @@ Rails.application.routes.draw do
     # registrations: 'users/registrations'
   }
   root to: "pages#home"
+
+  resources :chat_sessions, only: %i[index show create] do
+    resources :invitations, only: %i[new create index show destroy] do
+
   get "show_profile/:id", to: "pages#show_profile", as: "showprofile"
   resources :friendships, only: %i[index create destroy]
   resources :feedbacks, only: %i[new create]
+      
   resources :chat_sessions, only: %i[index show] do
     resources :invitations, only: %i[new create index show destroy]do
-      member do
-        patch :accept
-      end
-    end
-  end
-
-  post '/chat_session', to: 'chat_session#create', as: :chat_session_create
-
-  end
+       member do
+         patch :accept
+       end
+     end
+   end
+ end
 
 
 

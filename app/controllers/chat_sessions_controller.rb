@@ -1,5 +1,5 @@
 require 'httparty'
-class ChatSessionController < ApplicationController
+class ChatSessionsController < ApplicationController
   before_action :set_chat_session, only: [:show]
 
   def create
@@ -15,6 +15,8 @@ class ChatSessionController < ApplicationController
   end
 
   def index
+    raise
+
     @chat_sessions = ChatSession.all
   end
 
