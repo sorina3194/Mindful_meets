@@ -1,1 +1,13 @@
 <h1>Welcome to the Mindful Meets Homepage 🔮</h1>
+
+<%= link_to "Show Zuza's Profile", showprofile_path(31) %>
+  <%# <ul>
+    <% @user.each do |user| %>
+      <%# <li><%= link_to user.name, showprofile_path(user.id)</li> %>
+    <%# <% end %> 
+  <%# </ul> %>
+
+<%= link_to "Delete",
+  user_path(@user),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure to delete your profile?"}
+%>
