@@ -1,0 +1,10 @@
+
+<% @invited_users.each do |user| %>
+  <h3><%= user.first_name  %></h3>
+  <% if Invitation.find_by(invitee_id: user).status.nil? %>
+    <h2>Pending</h2>
+  <% else %>
+    <h2>Accepted</h2>
+  <% end %>
+<% end %>
+<%# <%= button_to "Mindful Meet", chat_sessions_path(), class: "btn btn-primary" %> 
