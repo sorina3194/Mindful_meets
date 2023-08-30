@@ -6,7 +6,7 @@ class InvitationsController < ApplicationController
   end
 
   def show
-
+    @my_invitations = Invitation.where(invitee_id: current_user)
   end
 
   def accept
@@ -23,3 +23,4 @@ class InvitationsController < ApplicationController
     @invitation = Invitation.find(params[:id])
   end
 end
+
