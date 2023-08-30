@@ -8,12 +8,14 @@ Rails.application.routes.draw do
   resources :friendships, only: %i[index create destroy]
   resources :feedbacks, only: %i[new create]
   resources :chat_sessions, only: %i[index show] do
-    resources :invitations, only: %i[new create index show destroy]
+    resources :invitations, only: %i[new create index show destroy]do
+      member do
+        patch :accept
+      end
     end
+  end
 
   post '/chat_session', to: 'chat_session#create', as: :chat_session_create
-
-  end
 
 
   # TODO: Chat
