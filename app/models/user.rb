@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :feedbacks
   has_many :feedbacks_received, class_name: 'Feedback', foreign_key: :target_user_id
+  has_many :invitations
 end

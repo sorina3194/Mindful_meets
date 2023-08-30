@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   post '/chat_session', to: 'chat_session#create', as: :chat_session_create
 
   resources :chat_session, only: %i[index show] do
-    resources :invitation, only: %i[new create index show destroy]
+    resources :invitations, only: %i[new create index show destroy] do
+      member do
+        patch :accept
+      end
+    end
   end
 
   resources :friendships, only: %i[index create destroy]

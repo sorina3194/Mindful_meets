@@ -1,0 +1,7 @@
+
+<% @invited_users.each do |user| %>
+  <h3><%= user.first_name  %></h3>
+  <% if Invitation.find_by(invitee_id: user).status.nil? %>
+    <h3>Pending</h3>
+    <% end %>
+<% end %>

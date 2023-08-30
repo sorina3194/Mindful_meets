@@ -10,3 +10,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+#content {
+  width: 100%;
+  padding: 20px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  #content {
+    width: 60%;
+    margin: 0 auto;
+    padding: 40px;
+  }
+}
