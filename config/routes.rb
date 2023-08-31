@@ -5,25 +5,20 @@ Rails.application.routes.draw do
   }
   root to: "pages#home"
 
-  resources :chat_sessions, only: %i[index show create] do
-    resources :invitations, only: %i[new create index show destroy] do
-
   get "show_profile/:id", to: "pages#show_profile", as: "showprofile"
   resources :friendships, only: %i[index create destroy]
   resources :feedbacks, only: %i[new create]
-      
-  resources :chat_sessions, only: %i[index show] do
-    resources :invitations, only: %i[new create index show destroy]do
-       member do
-         patch :accept
-       end
-     end
-   end
- end
 
-
-
-
+  resources :chat_sessions, only: %i[index show create] do
+    resources :invitations, only: %i[new create show destroy]do
+      member do
+        patch :accept
+        get :link_generator
+      end
+    end
+  end
+  resources :invitations, only: [:index]
+end
   # TODO: Chat
   # resources :private_chats, only: %i[show create]
   # resources :feedbacks, only: %i[new create]

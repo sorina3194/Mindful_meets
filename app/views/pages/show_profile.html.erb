@@ -1,6 +1,4 @@
 <h1> <%= @profile.first_name %></h1>
-<%= link_to "Show Zuza's Profile", showprofile_path(current_user.id) %>
 
 <label for="hobbies">Hobbies</label>
 <h3><%= @profile.hobbies %>, <%= Faker::Hobby.activity %></h3>
-

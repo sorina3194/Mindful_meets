@@ -2,6 +2,11 @@ require 'httparty'
 class ChatSessionsController < ApplicationController
   before_action :set_chat_session, only: [:show]
 
+  def index
+    @chat_sessions = ChatSession.all
+    raise
+  end
+
   def create
     @chat_session = ChatSession.create
     # Select 3 random users for invitations (example query)
@@ -14,10 +19,7 @@ class ChatSessionsController < ApplicationController
     redirect_to chat_session_path(@chat_session.id)
   end
 
-  def index
-    raise
-
-    @chat_sessions = ChatSession.all
+  def link_generator
   end
 
   def show
