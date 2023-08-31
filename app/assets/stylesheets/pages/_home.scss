@@ -1,8 +1,13 @@
 // Specific CSS for your home-page
+@font-face {
+  font-family: 'Soria';
+  src: asset-url('fonts/soria-font.ttf')
+}
 
 #homepage_whole{
-  background-color: #97bdae;
+  background-color:#97bdae;
   text-align: center;
+  height:844px;
 }
 
 #chat_button{
@@ -33,20 +38,20 @@
   padding-right:20px;
   padding-top:15px;
   padding-bottom:15px;
+  margin-bottom:220px;
   font-weight:bold;
-  margin-bottom:350px;
 }
 
 #mindful-header{
-  font-family: 'Calistoga', cursive;
-  padding-top: 50px;
-  padding-bottom: 20px;
+  font-family: 'Soria';
+  padding-top: 20px;
+  padding-bottom: 10px;
   color:#2b3f38;
-  font-size: 50px;
+  font-size: 60px;
 
 }
 #mindful-subheader{
-  font-family: 'Calistoga', cursive;
+  font-family: "Soria";
   margin-bottom:70px;
 }
 
@@ -55,7 +60,7 @@
   padding-left:30px;
   padding-right:30px;
   font-family:'Times New Roman', Times, serif;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 #philosopher{
@@ -64,4 +69,13 @@
   padding-right:30px;
   font-family:'Times New Roman', Times, serif;
   font-weight:bold;
+}
+
+#logo{
+ width: 100px;
+ height: 40px;
+ background-image: url("LOGO2.png");
+ background-size:contain;
+ background-repeat: no-repeat;
+ margin-left:10%;
 }
