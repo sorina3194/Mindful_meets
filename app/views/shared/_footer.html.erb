@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<div id="footer">
+<%= link_to root_path do %>
+  <span class="material-symbols-outlined" <% link_to "Home" %>>
+    home
+  </span>
+<% end %>
+
+  <span class="material-symbols-outlined">
+    diversity_2
+  </span>
+<% if user_signed_in? %>
+   <%= link_to showprofile_path(current_user.id) do%>
+  <span class="material-symbols-outlined">
+    person
+  </span>
+  <% end %>
+<% end %>
+  <span class="material-symbols-outlined">
+    chat
+  </span>
+</div>

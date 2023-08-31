@@ -1,0 +1,53 @@
+$my_text:#97bdae;
+$background:hsl(0, 0%, 91%);
+
+@font-face {
+  font-family: 'Soria';
+  src: asset-url('fonts/soria-font.ttf')
+}
+
+h1, h2,h3,h4,h5 {
+  font-family: 'Soria';
+  color:$my_text ;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+.container {
+  background-color:$background;
+}
+
+.main-container {
+  min-height: 100vh;
+  background-color:$background;
+}
+
+.title {
+  font-size: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.img_rounded {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.button {
+  color: $my_text;
+  text-align: center;
+  margin : 50px;
+  padding-left:30px;
+  padding-right:30px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight:bold;
+  border: #97bdae;
+
+}
+
+.users {
+  padding: 10px;
+}
