@@ -1,10 +1,23 @@
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Tilt+Warp&display=swap" rel="stylesheet">
+<div class="main-container">
+  <center><div id="logo"></div></center>
+  <h1 class=" title">Mindful Meet</h1>
+  <div class="container p-5">
+    <div class="d-flex-column ">
+      <% @invited_users.each do |user| %>
+        <div class=" users d-flex align-items-center border border-secondary-subtle ">
+          <p><%= cl_image_tag user.photo.key, class: "img_rounded"%></p>
+          <h1 class="p-3"><%= user.first_name  %></h1>
+          <% if Invitation.find_by(invitee_id: user).pending? %>
+            <h4 class="p-3">Pending</h4>
+          <% else %>
+            <h4 class="p-3">Accepted</h4>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-<% @invited_users.each do |user| %>
-  <h3><%= user.first_name  %></h3>
-  <% if Invitation.find_by(invitee_id: user).pending? %>
-    <h2>Pending</h2>
-  <% else %>
-    <h2>Accepted</h2>
-  <% end %>
-<% end %>
-<%= button_to "Mindful Meet", chat_sessions_path(), class: "btn btn-primary" %>
+  <center><%= button_to "Mindful Meet", chat_sessions_path(), class: "button" %></center>
+  <%= render "shared/footer" %>
+</div>

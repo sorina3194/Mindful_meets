@@ -2,9 +2,7 @@
 
 <%#  this link is now hardcoded with current user but should point to my friends/invites %>
 
-<% if user_signed_in? %>
-<%= link_to "Show Zuza's Profile", showprofile_path(current_user.id) %>
-<% end %>
+
 
 <%# <%= button_to "Call ChatController#create", chat_session_create_path(), class: "btn btn-primary" %>
 <%# <%= link_to "Delete",
@@ -19,7 +17,6 @@
   <h6 id="mindful-subheader"> Connect with like-minded people<h6>
   <p id="quote"> <i>This is the quote of the day. It’s profoundly deep and impressively verbose. Be changed, body and soul. </i></p>
   <p id="philosopher"> ~ Palatable Philosopher </p>
-  <%# <button id="chat_button" data-controller="chat-session" data-action="click->chat-session#startChat" data-chat-session-target="button" class="btn btn-primary">I want to curate my social destiny</button> %>
   <%= button_to "I want to curate my social destiny", chat_sessions_path, class: "btn btn-primary", id:"chat_button" %>
   <%= button_to "Let the universe decide", chat_sessions_path, class: "btn btn-primary", id:"chat_button2" %>
   <%= render "shared/footer" %>
