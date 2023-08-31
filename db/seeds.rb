@@ -50,20 +50,18 @@ id = 0
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    birthday: Faker::Time.between(from: 65.years.ago, to: 18.years.ago),
     username: Faker::Internet.username,
-    email: Faker::Internet.email,
-    password: "123456",
-    min_age: rand(20..30),
-    max_age: rand(50..60),
-    biography: Faker::Lorem.sentences(number: 2),
+    biography: Faker::Lorem.sentences,
+    age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
     skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
     city: Faker::Address.city,
     hobbies: Faker::Hobby.activity,
     music_genres: Faker::Music.genre,
     book_genres: Faker::Book.genre,
     movie_genres: Faker::Movie.title,
-    favorite_animal: Faker::Creature::Animal.name
+    favorite_animal: Faker::Creature::Animal.name,
+    email: Faker::Internet.email,
+    password: "123456",
   )
 
   image = URI.open(url[id])
@@ -78,10 +76,8 @@ file = URI.open("https://kitt.lewagon.com/placeholder/users/zuzannadobak")
 zuzanna = User.new(
   first_name: "Zuzanna",
   last_name: "Dobak",
-  min_age: 25,
-  max_age: 56,
   biography: "Hello, I'm Zuzanna 🙋🏽‍♀️",
-  birthday: Faker::Date.birthday(min_age: 18, max_age: 60),
+  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
   skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   city: "Berlin",
   hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
@@ -101,9 +97,7 @@ nessim = User.new(
   first_name: "Nessim",
   last_name: "Khayyat",
   biography: "Hello, I'm Nessim 🤓",
-  birthday: Faker::Time.between(from: 60.years.ago, to: 18.years.ago),
-  min_age: 18,
-  max_age: 30,
+  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
   skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   city: "Berlin",
   hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
@@ -122,10 +116,8 @@ file = URI.open("https://kitt.lewagon.com/placeholder/users/sorina3194")
 sorina = User.new(
   first_name: "Sorina",
   last_name: "Tudor",
-  biography: "Hello, I'm Sorina 🤓",
-  birthday: Faker::Time.between(from: 60.years.ago, to: 18.years.ago),
-  min_age: 25,
-  max_age: 56,
+  biography: "Hello, I'm Sorina 👱🏼‍♀️",
+  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
   skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   city: "Berlin",
   hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
@@ -144,9 +136,8 @@ file = URI.open("https://kitt.lewagon.com/placeholder/users/emmvs")
 emma = User.new(
   first_name: "Emma",
   last_name: "Ruenzel",
-  birthday: Faker::Time.between(from: 60.years.ago, to: 18.years.ago),
-  min_age: 25,
-  max_age: 65,
+  biography: "Hello, I'm Emma 🧞‍♀️",
+  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
   skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   city: "Berlin",
   hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
@@ -154,7 +145,6 @@ emma = User.new(
   book_genres: ["Romance", "Crime", "Classics"].sample,
   movie_genres: ["Romance", "Crime", "Classics", "Action"].sample,
   favorite_animal: "Sloth 🦥",
-  biography: "Hello, I'm Emma 🧞‍♀️",
   email: "emma@test.com",
   password: "123456"
 )

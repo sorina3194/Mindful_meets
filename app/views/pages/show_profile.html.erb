@@ -7,18 +7,10 @@
       width: 150, height: 150, crop: :thumb, gravity: :face) %></h3>
 
 <label for="biography">Biography</label>
-<%# join the biography into one sentence %>
 <h3><%= @profile.biography %></h3>
 
-<label for="birthday">Age</label>
-<%# TODO: calculate the age %>
-<h3><%= @profile.birthday %></h3>
-
-<label for="min_age">Min Age</label>
-<h3><%= @profile.min_age %></h3>
-
-<label for="max_age">Max Age</label>
-<h3><%= @profile.max_age %></h3>
+<label for="age">Age</label>
+<h3><%= @profile.age %></h3>
 
 <label for="city">City</label>
 <h3><%= @profile.city %></h3>
@@ -31,7 +23,6 @@
 
 <label for="skills">SKILLS</label>
 <h3><%= @profile.skills %></h3>
-
 
 <label for="music">MUSIC</label>
 <h3><%= @profile.music_genres %></h3>
