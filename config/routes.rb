@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :invitations, only: %i[new create index show destroy] do
       member do
         patch :accept
+        get :link_generate
       end
     end
   end

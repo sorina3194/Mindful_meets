@@ -62,7 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_134709) do
 
   create_table "invitations", force: :cascade do |t|
     t.string "video_chat_link"
-    t.string "status"
+    t.integer "status"
     t.bigint "inviter_id", null: false
     t.bigint "invitee_id", null: false
     t.bigint "chat_session_id", null: false
