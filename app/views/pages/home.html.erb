@@ -8,7 +8,8 @@
 %>
 
 <div id = "homepage_whole">
-<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Tilt+Warp&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Tilt+Warp&display=swap" rel="stylesheet">
+  <center><div id="logo"></div></center>
   <h1 id="mindful-header">mindful meets.</h1>
   <h6 id="mindful-subheader"> Connect with like-minded people<h6>
   <p id="quote"> <i>This is the quote of the day. It’s profoundly deep and impressively verbose. Be changed, body and soul. </i></p>
@@ -16,4 +17,5 @@
   <%# <button id="chat_button" data-controller="chat-session" data-action="click->chat-session#startChat" data-chat-session-target="button" class="btn btn-primary">I want to curate my social destiny</button> %>
   <%= button_to "I want to curate my social destiny", chat_sessions_path, class: "btn btn-primary", id:"chat_button" %>
   <%= button_to "Let the universe decide", chat_sessions_path, class: "btn btn-primary", id:"chat_button2" %>
+  <%= render "shared/footer" %>
 </div>
