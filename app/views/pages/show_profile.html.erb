@@ -1,34 +1,53 @@
-<h1> <%= @profile.first_name %></h1>
-  <% if current_user %>
-    <%= link_to "Edit profile", edit_user_registration_path(current_user) %>
-  <% end %>
-<label for="photo">Avatar</label>
-<h3><%= cl_image_tag(@profile.photo.key,
-      width: 150, height: 150, crop: :thumb, gravity: :face) %></h3>
+<div class="container", id="profile_whole">
+  <div class="profile-center py-4">
+      <%= cl_image_tag@profile.photo.key, class: "img-rounded"%>
+    </div>
 
-<label for="biography">Biography</label>
-<h3><%= @profile.biography %></h3>
+  <div class="profile-center-details m-3">
+    <h3><%= @profile.biography %></h3>
+  </div>
 
-<label for="age">Age</label>
-<h3><%= @profile.age %></h3>
 
-<label for="city">City</label>
-<h3><%= @profile.city %></h3>
+  <div class="profile-1 d-flex justify-space-between">
+    <div class="profile-1-details d-flex justify-content-between">
+      <div class="me-3 grey-background">
+      <label for="age" class="me-1">Age</label><%= @profile.age %>
+      </div>
+      <div class="me-3 grey-background">
+      <label for="city" class="me-1">City</label><%= @profile.city %>
+      </div>
+    </div>
+    <div class="profile-1-animal grey-background">
+    <label for="favorite_animal" class="me-1">Favorite Animal</label><%= @profile.favorite_animal %>
+    </div>
+  </div>
 
-<label for="favorite_animal">Favorite Animal</label>
-<h3><%= @profile.favorite_animal %></h3>
 
-<label for="hobbies">HOBBIES</label>
-<h3><%= @profile.hobbies %></h3>
+  <div class="profile-2 px-3">
+    <div class="d-flex justify-content-between">
+    <h3>HOBBIES:</h3>
+    <h3 class="ml-auto whitesmoke-background"><%= @profile.hobbies %></h3>
+    </div>
 
-<label for="skills">SKILLS</label>
-<h3><%= @profile.skills %></h3>
+    <div class="d-flex justify-content-between">
+    <h3>SKILLS:</h3>
+    <h3 class="ml-auto whitesmoke-background"><%= @profile.skills %></h3>
+    </div>
 
-<label for="music">MUSIC</label>
-<h3><%= @profile.music_genres %></h3>
+    <div class="d-flex justify-content-between">
+    <h3>MUSIC:</h3>
+    <h3 class="ml-auto whitesmoke-background"><%= @profile.music_genres %></h3>
+    </div>
 
-<label for="books">BOOKS</label>
-<h3><%= @profile.book_genres %></h3>
+    <div class="d-flex justify-content-between">
+    <h3>BOOKS:</h3>
+    <h3 class="ml-auto whitesmoke-background"><%= @profile.hobbies %></h3>
+    </div>
 
-<label for="movie">MOVIE</label>
-<h3><%= @profile.movie_genres %></h3>
+    <div class="d-flex justify-content-between">
+    <h3>MOVIE:</h3>
+    <h3 class="ml-auto whitesmoke-background"><%= @profile.movie_genres %></h3>
+    </div>
+  </div>
+  <%# <%= render "shared/footer" %>
+</div>

@@ -84,7 +84,7 @@ zuzanna = User.new(
   music_genres: ["Metal", "Psy Trance", "Classic", "HipHop😎", "Rock🤘"].sample,
   book_genres: ["Romance", "Crime", "Classics"].sample,
   movie_genres: ["Romance", "Crime", "Classics", "Action"].sample,
-  favorite_animal: "🐶 Dogs",
+  favorite_animal: "My three 🐶",
   email: "zuza@test.com",
   password: "123456"
 )
@@ -96,7 +96,7 @@ file = URI.open("https://kitt.lewagon.com/placeholder/users/nessimkh")
 nessim = User.new(
   first_name: "Nessim",
   last_name: "Khayyat",
-  biography: "Hello, I'm Nessim 🤓",
+  biography: "Hello, I'm Nessim 🙋🏻",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
   skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   city: "Berlin",
@@ -116,7 +116,7 @@ file = URI.open("https://kitt.lewagon.com/placeholder/users/sorina3194")
 sorina = User.new(
   first_name: "Sorina",
   last_name: "Tudor",
-  biography: "Hello, I'm Sorina 👱🏼‍♀️",
+  biography: "Hello, I'm Sorina 🙋‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
   skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Beeing stressed all the time and keep smile"].sample,
   city: "Berlin",
