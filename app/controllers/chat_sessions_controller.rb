@@ -7,15 +7,13 @@ class ChatSessionsController < ApplicationController
     # Select 3 random users for invitations (example query)
     random_users = User.order("RANDOM()").limit(3)
     random_users.map do |user|
-      invitation = Invitation.new(chat_sessions_id: @chat_session.id, inviter: current_user, invitee: user, status: 'pending')
+      invitation = Invitation.new(chat_session_id: @chat_session.id, inviter: current_user, invitee: user, status: 'pending')
       invitation.save
     end
     redirect_to chat_session_path(@chat_session.id)
   end
 
   def index
-    raise
-
     @chat_sessions = ChatSession.all
   end
 
@@ -30,6 +28,9 @@ class ChatSessionsController < ApplicationController
   #       generate_mindful_meets_link(invitation)
   #     end
   #   end
+  end
+
+  def link_generate
   end
 
   # def generate_mindful_meets_link

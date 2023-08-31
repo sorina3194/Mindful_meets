@@ -1,7 +1,7 @@
 <h1>My Invitations</h1>
 
-
 <% @my_invitations.each do |invitation| %>
   <h4><%= invitation.id  %></h4>
+
   <%= link_to "Accept", accept_chat_session_invitation_path(invitation.chat_session_id, invitation.id), data:{turbo_method: :patch} %>
 <% end %>
