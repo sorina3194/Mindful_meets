@@ -1,7 +1,7 @@
 
-<h1>Welcome to the Mindful Meets Homepage 🔮</h1>
 
 <%#  this link is now hardcoded with current user but should point to my friends/invites %>
+
 <% if user_signed_in? %>
 <%= link_to "Show Zuza's Profile", showprofile_path(current_user.id) %>
 <% end %>
