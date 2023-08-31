@@ -79,9 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_134709) do
     t.string "username", default: "", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
-    t.datetime "birthday", null: false
-    t.integer "min_age", null: false
-    t.integer "max_age", null: false
+    t.integer "age", null: false
     t.text "biography", null: false
     t.string "skills", null: false
     t.string "city", null: false

@@ -9,10 +9,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :username, null: false, default: ""
       t.string :first_name, null: false, default: ""
       t.string :last_name, null: false, default: ""
-      t.datetime :birthday, null: false
+      t.integer :age, null: false
 
-      t.integer :min_age, null: false
-      t.integer :max_age, null: false
+
       t.text :biography, null: false
       t.string :skills, null: false
       t.string :city, null: false
