@@ -2,6 +2,7 @@
 
 <%#  this link is now hardcoded with current user but should point to my friends/invites %>
 
+
 <%# <%= button_to "Call ChatController#create", chat_session_create_path(), class: "btn btn-primary" %>
 <%# <%= link_to "Delete",
   user_path(@user),
@@ -17,5 +18,4 @@
   <p id="philosopher"> ~ Palatable Philosopher </p>
   <%= button_to "I want to curate my social destiny", chat_sessions_path, class: "btn btn-primary", id:"chat_button" %>
   <%= button_to "Let the universe decide", chat_sessions_path, class: "btn btn-primary", id:"chat_button2" %>
-  <%= render "shared/footer" %>
 </div>
