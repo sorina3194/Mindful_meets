@@ -1,8 +1,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Tilt+Warp&display=swap" rel="stylesheet">
-<div class="main-container">
+<div class="main-container-mindful">
   <center><div id="logo"></div></center>
   <h1 class=" title">Mindful Meet</h1>
-  <div class="container p-5">
+  <div class="users_list">
     <div class="d-fl`ex-column ">
     <% if @invitations_ids.count == 3 && @invitations_ids.all? { |invitee_id| !Invitation.find_by(invitee_id: invitee_id).pending? } %>
       <div class="button">
@@ -23,7 +23,5 @@
       <% end %>
     </div>
   </div>
-
-  <center><%= button_to "Update Invitations", chat_sessions_path, class: "button" %></center>
-  <%= render "shared/footer" %>
+  <center><%= button_to "Update Invitations", chat_session_path(@chat_session.id), class: "button" %></center>
 </div>
