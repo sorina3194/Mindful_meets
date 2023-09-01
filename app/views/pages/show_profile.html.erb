@@ -1,6 +1,25 @@
 <div class="container", id="profile_whole">
   <div class="profile-center py-4">
       <%= cl_image_tag@profile.photo.key, class: "img-rounded"%>
+        <div class="img-rounded" data-ride="carousel">
+          <div class="img-rounded">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="https://www.thetrendspotter.net/wp-content/uploads/2022/01/Henry-Cavill.jpg" alt="First photo">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://www.thetrendspotter.net/wp-content/uploads/2021/07/Kristin-Bell.jpg" alt="Second photo">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://www.thetrendspotter.net/wp-content/uploads/2022/01/Chris-Hemsworth.jpg" alt="Third photo">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://www.thetrendspotter.net/wp-content/uploads/2021/07/Lucy-Liu.jpg" alt="Fourth photo">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://www.thetrendspotter.net/wp-content/uploads/2021/07/Halley-Berry.jpg" alt="Fifth photo">
+            </div>
+          </div>
+        </div>
     </div>
 
   <div class="profile-center-details m-3">
@@ -49,5 +68,5 @@
     <h3 class="ml-auto whitesmoke-background"><%= @profile.movie_genres %></h3>
     </div>
   </div>
-  <%# <%= render "shared/footer" %>
+<%# <%= render "shared/footer" %> 
 </div>
