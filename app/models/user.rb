@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :feedbacks_received, class_name: 'Feedback', foreign_key: :target_user_id
   has_many :invitations
   has_many :invitations_received, class_name: 'Invitation', foreign_key: :invitee_id
-
+  has_many :chat_session, through: :invitations
   # comment validation out because of conflicts when adding new or changing users.
   # We will add it on FRIDAY before demo!!!!
   # and then again in the next week on the LAST DAY!!!!

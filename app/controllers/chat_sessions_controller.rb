@@ -3,13 +3,18 @@ class ChatSessionsController < ApplicationController
   before_action :set_chat_session, only: [:show]
 
   def create
-    @chat_session = ChatSession.create
-    # Select 3 random users for invitations (example query)
-    random_users = User.where('id != ?', current_user.id).order("RANDOM()").limit(3)
-    random_users.map do |user|
-      invitation = Invitation.new(chat_session_id: @chat_session.id, inviter: current_user, invitee: user, status: 'pending', name: 'Mindful Meet')
-      invitation.save
-    end
+    # chat_sessions = current_user.chat_sessions
+    # if chat_sessions.all? {|session| session.status == "ended"}
+      @chat_session = ChatSession.create
+      # Select 3 random users for invitations (example query)
+      random_users = User.where('id != ?', current_user.id).order("RANDOM()").limit(3)
+      random_users.map do |user|
+        invitation = Invitation.new(chat_session_id: @chat_session.id, inviter: current_user, invitee: user, status: 'pending', name: 'Mindful Meet')
+        invitation.save
+      end
+    # else
+    #   @chat_session = ChatSession.where("status != ?","ended")
+    # end
     redirect_to chat_session_path(@chat_session.id)
   end
 
@@ -22,7 +27,6 @@ class ChatSessionsController < ApplicationController
     @chat_session = ChatSession.find(params[:id])
     @invitations_ids = @chat_session.invitations.pluck(:invitee_id)
     @invited_users = User.where(id: @invitations_ids)
-
     # Check invitation statuses and generate Google Meets link if needed
   #   @invitations.each do |invitation|
   #     if invitation.status == 'accepted'
