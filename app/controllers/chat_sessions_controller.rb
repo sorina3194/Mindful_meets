@@ -19,9 +19,8 @@ class ChatSessionsController < ApplicationController
   end
 
   def index
-    @chat_session = ChatSession.find(params[:id])
-    @invitations_ids = @chat_session.invitations.pluck(:invitee_id)
-    @invited_users = User.where(id: @invitations_ids)
+    @chat_sessions = ChatSession.all
+    @invitations = Invitation.where(inviter: current_user)
   end
 
   def show

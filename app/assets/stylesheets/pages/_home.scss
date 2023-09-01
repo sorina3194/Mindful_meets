@@ -5,9 +5,11 @@
 }
 
 #homepage_whole{
-  background-color:#97bdae;
   text-align: center;
   height: 730px;
+  background-image: url("BACKGROUND.png");
+  background-image: cover;
+  padding-top:50px;
 }
 
 #chat_button{

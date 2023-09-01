@@ -9,8 +9,10 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+    <body style="background-color: <%= (params[:controller] == "pages" &&  params[:action] == "show_profile") ? "#e8e8e8" :  "#D2E9E9" %>">
 
-  <body>
+
+
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
