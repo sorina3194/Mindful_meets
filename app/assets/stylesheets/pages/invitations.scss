@@ -1,0 +1,47 @@
+#invitation_whole {
+  width:390px;
+  height:500px;
+
+}
+
+#invitation_header {
+  padding-top:50px;
+  margin-bottom: 10px;
+}
+
+#invitations {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+  padding-top:30px;
+}
+
+#invitation {
+  padding-top:40px;
+  padding-bottom:40px;
+  padding-left: 100px;
+  padding-right:100px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(6.9px);
+  -webkit-backdrop-filter: blur(6.9px);
+}
+
+a {
+  text-decoration: none;
+  color:#2b3f38;
+}
+
+#accept {
+  background: rgba(48, 48, 48, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
