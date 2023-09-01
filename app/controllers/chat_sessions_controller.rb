@@ -7,14 +7,15 @@ class ChatSessionsController < ApplicationController
     # Select 3 random users for invitations (example query)
     random_users = User.where('id != ?', current_user.id).order("RANDOM()").limit(3)
     random_users.map do |user|
-        invitation = Invitation.new(chat_session_id: @chat_session.id, inviter: current_user, invitee: user, status: 'pending', name: 'Mindful Meet')
-        invitation.save
-      end
+      invitation = Invitation.new(chat_session_id: @chat_session.id, inviter: current_user, invitee: user, status: 'pending', name: 'Mindful Meet')
+      invitation.save
+    end
     redirect_to chat_session_path(@chat_session.id)
   end
 
   def index
     @chat_sessions = ChatSession.all
+    @invitations = Invitation.where(inviter: current_user)
   end
 
   def show
