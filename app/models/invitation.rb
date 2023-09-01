@@ -4,6 +4,6 @@ class Invitation < ApplicationRecord
   belongs_to :chat_session
 
   enum status: { pending: 0, accepted: 1, declined: 2 }
-
+  
   validates :status, presence: true
 end

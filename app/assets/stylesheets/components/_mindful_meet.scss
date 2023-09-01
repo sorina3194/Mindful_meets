@@ -21,7 +21,6 @@ h1 {
 }
 
 .main-container {
-  min-height: 100vh;
   background-color:$background;
 }
 
@@ -50,4 +49,9 @@ h1 {
 
 .users {
   padding: 10px;
+}
+
+a {
+  text-decoration: none;
+
 }

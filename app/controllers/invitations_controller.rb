@@ -2,6 +2,7 @@ class InvitationsController < ApplicationController
   # before_action :set_invitation
   def index
     @my_invitations = Invitation.where(invitee_id: current_user)
+    # @inviter = User.where(id: @my_invitations.invitation_id.inviter_id)
   end
 
   def create

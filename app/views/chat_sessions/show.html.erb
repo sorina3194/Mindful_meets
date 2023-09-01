@@ -3,7 +3,13 @@
   <center><div id="logo"></div></center>
   <h1 class=" title">Mindful Meet</h1>
   <div class="container p-5">
-    <div class="d-flex-column ">
+    <div class="d-fl`ex-column ">
+    <% if @invitations_ids.count == 3 && @invitations_ids.all? { |invitee_id| !Invitation.find_by(invitee_id: invitee_id).pending? } %>
+      <div class="button">
+        <a href="https://youtu.be/1anv9pEy0k0" target="_blank" class="btn btn-primary">Start Mindful Meet</a>
+      </div>
+    <% end %>
+
       <% @invited_users.each do |user| %>
         <div class=" users d-flex align-items-center border border-secondary-subtle ">
           <p><%= cl_image_tag user.photo.key, class: "img_rounded"%></p>
@@ -18,6 +24,6 @@
     </div>
   </div>
 
-  <center><%= button_to "Mindful Meet", chat_sessions_path(), class: "button" %></center>
+  <center><%= button_to "Update Invitations", chat_sessions_path, class: "button" %></center>
   <%= render "shared/footer" %>
 </div>
