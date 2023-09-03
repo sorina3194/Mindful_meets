@@ -34,3 +34,11 @@ body {
   flex-direction: column;
 }
 
+#videos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.OT_root {
+  height: 240px !important;
+}

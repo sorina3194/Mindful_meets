@@ -1,19 +1,16 @@
-<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Tilt+Warp&display=swap" rel="stylesheet">
 <div class="main-container-mindful">
   <center><div id="logo"></div></center>
   <h1 class=" title">Mindful Meet</h1>
   <div class="users_list">
     <div class="d-fl`ex-column ">
     <% if @invitations_ids.count == 3 && @invitations_ids.all? { |invitee_id| !Invitation.find_by(invitee_id: invitee_id).pending? } %>
-      <div class="button">
-        <a href="https://youtu.be/1anv9pEy0k0" target="_blank" class="btn btn-primary">Start Mindful Meet</a>
-      </div>
+      <%= link_to "Start Mindful Meets", room_path(@chat_session.room_id), class: "button" %>
     <% end %>
 
       <% @invited_users.each do |user| %>
         <div class=" users d-flex align-items-center border border-secondary-subtle ">
           <p><%= cl_image_tag user.photo.key, class: "img_rounded"%></p>
-          <h1 class="p-3"><%= user.first_name  %></h1>
+          <h1 class="p-3"><%= user.name  %></h1>
           <% if Invitation.find_by(invitee_id: user).pending? %>
             <h4 class="p-3">Pending</h4>
           <% else %>

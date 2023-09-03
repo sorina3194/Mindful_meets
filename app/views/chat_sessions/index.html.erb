@@ -4,9 +4,9 @@
   <div id="chats">
     <% @chat_sessions.each do |chat| %>
     <div id="chat">
-      <h4><%= chat.id %></h4>
+      <h4><%= chat.created_at.strftime("%B %d, %Y") %></h4>
       <% chat.invitations.each do |invitation| %>
-      <%= invitation.invitee.first_name %>
+      <%= invitation.invitee.name %>
       <div id="buttons">
         <span class="material-symbols-outlined">
           thumb_up
@@ -14,9 +14,17 @@
         <span class="material-symbols-outlined">
           thumb_down
         </span>
-        <span class="material-symbols-outlined">
-          flag
-        </span>
+        <div data-controller="toggle" class="mt-5;">
+          <button data-action="click->toggle#fire" class="btn btn-outline-primary" id="btn">
+            <span class="material-symbols-outlined">
+              flag
+            </span>
+          </button>
+          <div data-toggle-target="togglableElement" class="d-none">
+          <%= render "form", feedback: @feedback %>
+          </div>
+        </div>
+
       </div>
       <% end %>
       </div>
