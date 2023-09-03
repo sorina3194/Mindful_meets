@@ -5,22 +5,11 @@ class InvitationsController < ApplicationController
     # @inviter = User.where(id: @my_invitations.invitation_id.inviter_id)
   end
 
-  def create
-
-  end
-
-  def show
-  end
-
   def accept
     @invitation = Invitation.find(params[:id])
     @invitation.status = "accepted"
     @invitation.save!
     redirect_to chat_session_path(@invitation.chat_session.id)
-
-    # respond_to do |format|
-    #   format.js
-    # end
   end
 
   def decline

@@ -5,13 +5,16 @@ class ChatSessionsController < ApplicationController
   def create
     # chat_sessions = current_user.chat_sessions
     # if chat_sessions.all? {|session| session.status == "ended"}
-      @chat_session = ChatSession.create
-      # Select 3 random users for invitations (example query)
-      random_users = User.where('id != ?', current_user.id).order("RANDOM()").limit(3)
-      random_users.map do |user|
-        invitation = Invitation.new(chat_session_id: @chat_session.id, inviter: current_user, invitee: user, status: 'pending', name: 'Mindful Meet')
-        invitation.save
-      end
+    @chat_session = ChatSession.create
+    # Select 3 random users for invitations (example query)
+    random_users = User.where('id != ?', current_user.id).order("RANDOM()").limit(3)
+    random_users.map do |user|
+      invitation = Invitation.new(chat_session_id: @chat_session.id, inviter: current_user, invitee: user, status: 'pending', name: 'Mindful Meet')
+      invitation.save
+    end
+    @room = Room.create
+    @chat_session.room_id = @room.id
+    @chat_session.save
     # else
     #   @chat_session = ChatSession.where("status != ?","ended")
     # end
@@ -21,54 +24,14 @@ class ChatSessionsController < ApplicationController
   def index
     @chat_sessions = ChatSession.all
     @invitations = Invitation.where(inviter: current_user)
+    @feedback = Feedback.new
   end
 
   def show
     @chat_session = ChatSession.find(params[:id])
     @invitations_ids = @chat_session.invitations.pluck(:invitee_id)
     @invited_users = User.where(id: @invitations_ids)
-    # Check invitation statuses and generate Google Meets link if needed
-  #   @invitations.each do |invitation|
-  #     if invitation.status == 'accepted'
-  #       generate_mindful_meets_link(invitation)
-  #     end
-  #   end
   end
-
-  def link_generate
-    puts "Sorina"
-  end
-
-  # def generate_mindful_meets_link
-  #   response = HTTParty.post(
-  #     'https://api.zoom.us/v2/users/me/meetings',
-  #     headers: {
-  #       'Content-Type' => 'application/json',
-  #       'Authorization' => "Bearer #{your_zoom_api_token}"
-  #     },
-  #     body: {
-  #       topic: 'Video Chat Meeting',
-  #       type: 1, # Instant Meeting
-  #       settings: {
-  #         use_pmi: false,
-  #         approval_type: 0,
-  #         registration_type: 1
-  #       }
-  #     }.to_json
-  #   )
-
-  #   if response.code == 201
-  #     meeting_data = JSON.parse(response.body)
-  #     zoom_meeting_link = meeting_data['join_url']
-
-  #     # Store the Zoom meeting link in the invitation or elsewhere
-  #     invitation.update(zoom_meeting_link: zoom_meeting_link)
-  #   else
-  #     # Handle error cases here
-  #     puts "Error creating Zoom meeting: #{response.body}"
-  #   end
-  # end
-
 
   private
 

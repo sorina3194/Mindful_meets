@@ -1,0 +1,18 @@
+
+<div id="text-color">
+  <div class="mx-auto p-2" style="width: 400px">
+  <h2>Feedback</h2>
+  <%= simple_form_for(@feedback) do |f| %>
+    <div>
+      <%= f.input :content,
+                  required: true,
+                  autofocus: true%>
+    </div>
+    <div id="submit">
+      <%= f.button :submit, "Submit" %>
+
+    </div>
+  <% end %>
+
+  </div>
+</div>

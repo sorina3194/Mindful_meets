@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
   </head>
     <body style="background-color: <%= (params[:controller] == "pages" &&  params[:action] == "show_profile") ? "#e8e8e8" :  "#D2E9E9" %>">
 
