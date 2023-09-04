@@ -5,7 +5,7 @@ class FriendshipsController < ApplicationController
   def show; end
 
   def index
-    @friendships = Friendship.all
+    @friendships = current_user.friendships
   end
 
 end

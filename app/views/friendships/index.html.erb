@@ -1,1 +1,12 @@
 <h1>My friends 😍</h1>
+
+  <% @friendships.accepted.each do |friendship| %>
+      <%= friendship.friend.name%>
+  <% end %>
+
+<h2>My pending friend Requests 😍</h2>
+  <% @friendships.pending.each do |friendship| %>
+    <ul>
+      <li><%= friendship.friend.name unless friendship.status == "declined" %></li>
+    </ul>
+  <% end %>
