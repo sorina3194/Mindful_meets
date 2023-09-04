@@ -123,6 +123,7 @@ GEM
     faker (3.2.1)
       i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
+    followability (1.1.1)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
     globalid (1.1.0)
@@ -301,6 +302,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
+  followability (~> 1.1)
   font-awesome-sass (~> 6.1)
   httparty
   importmap-rails

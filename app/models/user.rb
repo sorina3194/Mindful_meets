@@ -2,15 +2,21 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :trackable
+
   has_one_attached :photo
+
   has_many :feedbacks, dependent: :destroy
   has_many :feedbacks_received, class_name: 'Feedback', foreign_key: :target_user_id,dependent: :destroy
+
   has_many :invitations, dependent: :destroy
   has_many :invitations_received, class_name: 'Invitation', foreign_key: :invitee_id, dependent: :destroy
+
   has_many :chat_session, through: :invitations, dependent: :destroy
-  # comment validation out because of conflicts when adding new or changing users.
-  # We will add it on FRIDAY before demo!!!!
-  # and then again in the next week on the LAST DAY!!!!
+
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
+
+  # Comment this in on Friday
 
   # validates :first_name, presence: true
   # validates :last_name, presence: true
