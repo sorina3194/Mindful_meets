@@ -1,12 +1,29 @@
-<h1>My friends 😍</h1>
+<div class="row">
+  <div class="col-md-6 mt-5">
+    <div class="card m-5">
+      <div class="card-header">
+        <h1>My friends 😍</h1>
+      </div>
+      <div class="card-body">
+          <% @friendships.accepted.each do |friendship| %>
+            <ul>
+                <li><%= friendship.friend.name%></li>
+            </ul>
+          <% end %>
+      </div>
+    </div>
 
-  <% @friendships.accepted.each do |friendship| %>
-      <%= friendship.friend.name%>
-  <% end %>
-
-<h2>My pending friend Requests 😍</h2>
-  <% @friendships.pending.each do |friendship| %>
-    <ul>
-      <li><%= friendship.friend.name unless friendship.status == "declined" %></li>
-    </ul>
-  <% end %>
+    <div class="card m-5">
+      <div class="card-header">
+        <h2>Pending Requests ⌛️</h2>
+      </div>
+      <div class="card-body">
+          <% @friendships.pending.each do |friendship| %>
+            <ul>
+              <li><%= friendship.friend.name unless friendship.status == "declined" %></li>
+            </ul>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
