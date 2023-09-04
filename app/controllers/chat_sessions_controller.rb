@@ -6,7 +6,7 @@ class ChatSessionsController < ApplicationController
     @chat_session = ChatSession.create(status: "active")
     random_users = User.where('id != ?', current_user.id).order("RANDOM()").limit(3)
     random_users.map do |user|
-      invitation = Invitation.new(chat_session_id: @chat_session.id, inviter: current_user, invitee: user, status: 'pending', name: 'Mindful Meet')
+      invitation = Invitation.new(chat_session_id: @chat_session.id, user: current_user, invitee: user, status: 'pending', name: 'Mindful Meet')
       invitation.save
     end
     @room = Room.create
@@ -20,7 +20,7 @@ class ChatSessionsController < ApplicationController
 
   def index
     @chat_sessions = ChatSession.all
-    @invitations = Invitation.where(inviter: current_user)
+    @invitations = Invitation.where(user: current_user)
     @feedback = Feedback.new
   end
 
