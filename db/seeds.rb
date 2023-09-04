@@ -164,4 +164,8 @@ emma = User.new(
 emma.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 emma.save
 
+# Friendships
+friendship = Friendship.new(user: zuzanna, friend: emma)
+friendship.save
+
 puts 'Seeds are planted! 🌱🌱🌱'
