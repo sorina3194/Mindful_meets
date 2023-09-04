@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_04_132259) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_04_123107) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -77,15 +77,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_132259) do
     t.string "video_chat_link"
     t.string "name"
     t.integer "status"
-    t.bigint "inviter_id", null: false
+    t.bigint "user_id", null: false
     t.bigint "invitee_id", null: false
     t.bigint "chat_session_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
     t.index ["chat_session_id"], name: "index_invitations_on_chat_session_id"
     t.index ["invitee_id"], name: "index_invitations_on_invitee_id"
-    t.index ["inviter_id"], name: "index_invitations_on_inviter_id"
     t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
@@ -134,5 +132,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_132259) do
   add_foreign_key "invitations", "chat_sessions"
   add_foreign_key "invitations", "users"
   add_foreign_key "invitations", "users", column: "invitee_id"
-  add_foreign_key "invitations", "users", column: "inviter_id"
 end
