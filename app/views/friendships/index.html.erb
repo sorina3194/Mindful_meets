@@ -1,28 +1,18 @@
 <div class="row">
   <div class="col-md-6 mt-5">
+    <%= link_to "Go to your requests", requests_friendships_path, class: "d-flex justify-content-center btn btn-outline-primary btn-sm"%>
     <div class="card m-5">
       <div class="card-header">
         <h1>My friends 😍</h1>
       </div>
       <div class="card-body">
-          <% @friendships.accepted.each do |friendship| %>
+        <% @friendships.accepted.each do |friendship| %>
+          <div class="d-flex justify-content-between">
             <ul>
-                <li><%= friendship.friend.name%></li>
+                <li class="ml-auto whitesmoke-background"><%= friendship.friend.name%></li>
             </ul>
-          <% end %>
-      </div>
-    </div>
-
-    <div class="card m-5">
-      <div class="card-header">
-        <h2>Pending Requests ⌛️</h2>
-      </div>
-      <div class="card-body">
-          <% @friendships.pending.each do |friendship| %>
-            <ul>
-              <li><%= friendship.friend.name unless friendship.status == "declined" %></li>
-            </ul>
-          <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

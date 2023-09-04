@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   post "link_generate/:id", to: "chat_sessions#link_generate", as: "generate_link"
   get "show_profile/:id", to: "pages#show_profile", as: "showprofile"
 
-  resources :friendships, only: %i[index create destroy]
+  resources :friendships, only: %i[index show create destroy] do
+    get :requests, on: :collection
+  end
   resources :feedbacks, only: %i[new create]
   resources :invitations, only: :index
 
