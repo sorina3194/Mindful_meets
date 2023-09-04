@@ -1,0 +1,2 @@
+class InvitationNotification < ApplicationRecord
+end

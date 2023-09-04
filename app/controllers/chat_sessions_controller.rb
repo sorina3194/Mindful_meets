@@ -8,13 +8,11 @@ class ChatSessionsController < ApplicationController
     random_users.map do |user|
       invitation = Invitation.new(chat_session_id: @chat_session.id, user: current_user, invitee: user, status: 'pending', name: 'Mindful Meet')
       invitation.save
+      InvitationNotification.create(user_id: user.id)
     end
     @room = Room.create
     @chat_session.room_id = @room.id
     @chat_session.save
-    # else
-    #   @chat_session = ChatSession.where("status != ?","ended")
-    # end
     redirect_to chat_session_path(@chat_session.id)
   end
 

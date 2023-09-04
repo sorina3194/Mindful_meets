@@ -6,9 +6,15 @@
         <div id="box">
           <ul id="items">
             <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= link_to "I n v i t a t i o n s", invitations_path, class: "dropdown-item" %>
-              </li>
+              <% if InvitationNotification.where(user_id: current_user.id).present? %>
+                <li class="nav-item">
+                  <%= link_to "I n v i t a t i o n s", invitations_path, class: "dropdown-item", style: "color: red;"%>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to "I n v i t a t i o n s", invitations_path, class: "dropdown-item"%>
+                </li>
+              <% end %>
               <li class="nav-item">
                 <%= link_to "C o n v e r s a t i o n s", chat_sessions_path, class: "nav-link" %>
               </li>
