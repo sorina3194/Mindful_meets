@@ -83,5 +83,5 @@ gem "devise"
 gem "faker"
 gem "cloudinary"
 gem "httparty"
-
 gem "opentok", "~> 4.7"
+
