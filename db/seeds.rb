@@ -4,6 +4,7 @@ require 'open-uri'
 puts "Cleaning up Database 🧼"
 # Invitation.destroy_all
 # ChatSession.destroy_all
+Invitation.destroy_all
 User.destroy_all
 
 puts 'Creating 5 Fake Users... 😍'
