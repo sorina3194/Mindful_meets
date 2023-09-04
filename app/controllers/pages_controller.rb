@@ -8,12 +8,12 @@ class PagesController < ApplicationController
       @chat_session = @invitation ? @invitation.chat_session : false
 
       if @invitation && @chat_session.status == "active"
-          @display_alert = true
+        @display_alert = true
       else
         @display_alert = false
       end
-
     end
+
   end
 
   def show_profile
