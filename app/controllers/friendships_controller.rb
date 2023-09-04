@@ -1,6 +1,4 @@
 class FriendshipsController < ApplicationController
-  # before_action :authenticate_user!
-  # before_action :set_user
 
   def show; end
 
@@ -8,4 +6,8 @@ class FriendshipsController < ApplicationController
     @friendships = current_user.friendships
   end
 
+  def requests
+    @pending_sent_requests = Friendship.where(user_id: current_user.id, status: "pending", accepted?: false)
+    @pending_received_requests = Friendship.where(friend_id: current_user.id, status: "pending", accepted?: false)
+  end
 end
