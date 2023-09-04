@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-
   post "link_generate/:id", to: "chat_sessions#link_generate", as: "generate_link"
   get "show_profile/:id", to: "pages#show_profile", as: "showprofile"
 
@@ -15,7 +14,11 @@ Rails.application.routes.draw do
   resources :feedbacks, only: %i[new create]
   resources :invitations, only: :index
 
+
   resources :chat_sessions, only: %i[index show create] do
+    member do
+      patch :finish
+    end
     resources :invitations, only: %i[new create index show destroy] do
       member do
         patch :accept

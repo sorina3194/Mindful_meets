@@ -2,6 +2,21 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
+    if user_signed_in?
+      @invitation = Invitation.where(inviter_id: current_user.id).present? ? Invitation.where(inviter_id: current_user.id)[0] : false
+
+      @chat_session = @invitation ? @invitation.chat_session : false
+
+      
+
+
+      if @invitation && @chat_session.status == "active"
+          @display_alert = true
+      else
+        @display_alert = false
+      end
+
+    end
   end
 
   def show_profile
@@ -9,7 +24,7 @@ class PagesController < ApplicationController
   end
 
 # def new
-#   @profile = current_user.build_profile
+#
 # end
 
 # def create
