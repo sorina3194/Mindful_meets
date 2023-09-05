@@ -36,7 +36,6 @@ class ChatSessionsController < ApplicationController
     redirect_to root_path
   end
 
-
   private
 
   def set_chat_session

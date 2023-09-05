@@ -6,7 +6,7 @@ class PagesController < ApplicationController
       @invitation = Invitation.where(user_id: current_user.id).present? ? Invitation.where(user_id: current_user.id)[0] : false
 
       @chat_session = @invitation ? @invitation.chat_session : false
-
+      @blocked_user = @
       if @invitation && @chat_session.status == "active"
         @display_alert = true
       else

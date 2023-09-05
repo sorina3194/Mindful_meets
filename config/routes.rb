@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   end
 
   resources :feedbacks, only: %i[new create]
-  resources :invitations, only: :index
+  resources :invitations, only: %i[index] do
+    resources :blocked_users, only: %i[create]
+  end
 
   resources :chat_sessions, only: %i[index show create] do
     member do
