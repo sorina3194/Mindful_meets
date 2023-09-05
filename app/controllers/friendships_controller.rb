@@ -11,9 +11,8 @@ class FriendshipsController < ApplicationController
     @friendship.status = "pending"
     @friendship.user = current_user
 
-      if @friendship.save!
-      flash[:success] = 'Friendship created 🧜🏻‍♂️💃👯‍♂️🦥'
-      redirect_to friendships_path
+    if @friendship.save!
+      redirect_to friendships_path, notice: "Friendship created"
     else
       render 'friendships'
     end
@@ -36,6 +35,7 @@ class FriendshipsController < ApplicationController
     else
       flash[:alert] = "This status is not valid, sorry 😢"
     end
+    redirect_to chat_sessions_path
   end
 
   # notification on friendship request

@@ -1,6 +1,6 @@
 <div class="menu-wrap">
   <input type="checkbox" class="toggler">
-  <% if InvitationNotification.where(user_id: current_user.id).present? %>
+  <% if user_signed_in? && InvitationNotification.where(user_id: current_user.id).present? %>
       <span class="toggler__badge"></span>
   <% end %>
   <div class="hamburger"><div></div></div>
