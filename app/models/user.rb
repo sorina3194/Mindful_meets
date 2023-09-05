@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
+  has_many :invitation_notifications, dependent: :destroy
+
   # Comment this in on Friday
 
   # validates :first_name, presence: true

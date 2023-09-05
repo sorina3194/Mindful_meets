@@ -9,27 +9,27 @@
 
         <h4><%= chat.created_at.strftime("%B %d, %Y") %></h4>
         <% chat.invitations.each do |invitation| %>
-          <div id="invitee">
-            <%= invitation.invitee.name %>
-          </div>
-        <div id="buttons">
-            <% @test = Friendship.where(user_id: User.where(name: invitation.invitee.name),friend_id: current_user).nil?  %>
-              <% if @test %>
-                <%= simple_form_for(@friendship) do |f| %>
-                  <%= f.hidden_field :friend_id, value: invitation.invitee.id %>
-                  <%= f.button :submit, class: "btn btn-primary" do %>
-                    <span class="material-symbols-outlined" >
-                      thumb_up
-                    </span>
-                  <% end %>
-                <% end %>
-              <% else %>
-                <%= link_to change_status_friendship_path(Friendship.where(user_id: User.where(name: invitation.invitee.name),friend_id: current_user)) do %>
-                  <span class="material-symbols-outlined" <% link_to "Like" %>>
+        <%# <%unless invitation.invitee.name == current_user.name || Friendship.where(user_id: current_user, friend_id: User.where(name: invitation.invitee.name)[0].id ) %>
+            <div id="invitee">
+              <%= invitation.invitee.name %>
+            </div>
+            <div id="buttons">
+            <% if Friendship.where(user_id: User.where(name: invitation.invitee.name)[0].id, friend_id: current_user).empty? && Friendship.where(user_id: current_user, friend_id: User.where(name: invitation.invitee.name)[0].id ).empty?%>
+              <%= simple_form_for(@friendship) do |f| %>
+                <%= f.hidden_field :friend_id, value: invitation.invitee.id %>
+                <%= f.button :submit, class: "btn btn-primary" do %>
+                  <span class="material-symbols-outlined" >
                     thumb_up
                   </span>
                 <% end %>
               <% end %>
+            <% else %>
+              <%= link_to change_status_friendship_path(Friendship.where(user_id: User.where(name: invitation.invitee.name)[0].id,friend_id: current_user)[0], status: "accepted"), data: { turbo_method: :patch } do %>
+                <span class="material-symbols-outlined" <% link_to "Like" %>>
+                  thumb_up
+                </span>
+              <% end %>
+            <% end %>
         <%= link_to  invitation_blocked_users_path(invitation), data: {turbo_method: :post} do %>
               <span class="material-symbols-outlined">
                 thumb_down
