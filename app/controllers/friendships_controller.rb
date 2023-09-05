@@ -26,10 +26,7 @@ class FriendshipsController < ApplicationController
   def change_status
     @friendship = Friendship.find(params[:id])
     new_status = params[:status]
-
     case new_status
-    when "open"
-      @friendship.update(status: "open")
     when "accepted"
       @friendship.update(status: "accepted")
     when "declined"

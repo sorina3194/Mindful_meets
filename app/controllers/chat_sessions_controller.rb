@@ -10,6 +10,8 @@ class ChatSessionsController < ApplicationController
       invitation.save
       InvitationNotification.create(user_id: user.id)
     end
+    myinvite = Invitation.new(chat_session_id: @chat_session.id, user: current_user, invitee: current_user, status: 'pending', name: 'Mindful Meet')
+    myinvite.save!
     @room = Room.create
     @chat_session.room_id = @room.id
     @chat_session.save
