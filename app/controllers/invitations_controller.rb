@@ -2,6 +2,7 @@ class InvitationsController < ApplicationController
   # before_action :set_invitation
   def index
     @my_invitations = Invitation.where(invitee_id: current_user)
+    InvitationNotification.where(user_id: current_user.id).destroy_all
   end
 
   def accept

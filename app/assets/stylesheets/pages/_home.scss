@@ -6,7 +6,7 @@
 
 #homepage_whole{
   text-align: center;
-  height: 730px;
+  height: 750px;
   background-image: url("BACKGROUND.png");
   background-image: cover;
   padding-top:50px;
@@ -31,10 +31,11 @@
 #chat_button2{
   background-color: #F8F6F4;
   color: #6a8e8e;
-  font-size: 10px;
+  font-size: 17px;
   border-radius: 35px;
   border-color:#B1CCCC;
   margin-bottom: 40px;
+  margin-top: 100px;
   box-shadow: 5px 5px 5px rgb(91, 91, 91);
   padding-left:20px;
   padding-right:20px;
@@ -54,6 +55,7 @@
 #mindful-subheader{
   font-family: "Soria";
   margin-bottom:70px;
+  font-size: 20px;
 }
 
 #quote{

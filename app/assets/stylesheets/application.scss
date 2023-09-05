@@ -27,11 +27,15 @@
 }
 
 body {
-  background-color:#97bdae;
-  height: 100vh;
+  background-color:#B1CCCC;
+  min-height: 100vh;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+}
+main {
+  flex-grow: 1;
+  overflow-y: auto; /* Add scrollbar if content overflows */
 }
 
 #videos {

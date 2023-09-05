@@ -4,8 +4,13 @@
     <% @my_invitations.each do |invitation| %>
     <div id="invitation">
       <h4><%= invitation.name %></h4>
+      <h4><%= invitation.created_at.strftime("%B %d, %Y") %></h4>
       <div id="accept">
+      <% if invitation.status != "accepted" %>
         <%= link_to "Accept", accept_chat_session_invitation_path(invitation.chat_session_id, invitation.id), data:{turbo_method: :patch} %>
+      <% else %>
+        <%= link_to "Accepted", disabled: true %>
+      <% end %>
       </div>
     </div>
     <% end %>

@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_09_05_092240) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +74,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_092240) do
     t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
+  create_table "invitation_notifications", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_invitation_notifications_on_user_id"
+  end
+
   create_table "invitations", force: :cascade do |t|
     t.string "video_chat_link"
     t.string "name"
@@ -131,6 +139,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_092240) do
   add_foreign_key "feedbacks", "users", column: "target_user_id"
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id"
+  add_foreign_key "invitation_notifications", "users"
   add_foreign_key "invitations", "chat_sessions"
   add_foreign_key "invitations", "users"
   add_foreign_key "invitations", "users", column: "invitee_id"
