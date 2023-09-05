@@ -6,45 +6,71 @@
   <div id="chats">
     <% @chat_sessions.each do |chat| %>
       <div id="chat">
-
+      <%# TODO finish the friendship status for the flag, create feedback and block user .... Make sure to remove you as one of the potential users to send a friendship to...look into how to avoid opening a new session if part of one already...display friendships on the friendslist and a button that directs to the users profile %>
         <h4><%= chat.created_at.strftime("%B %d, %Y") %></h4>
         <% chat.invitations.each do |invitation| %>
-        <%# <%unless invitation.invitee.name == current_user.name || Friendship.where(user_id: current_user, friend_id: User.where(name: invitation.invitee.name)[0].id ) %>
             <div id="invitee">
               <%= invitation.invitee.name %>
             </div>
             <div id="buttons">
-            <% if Friendship.where(user_id: User.where(name: invitation.invitee.name)[0].id, friend_id: current_user).empty? && Friendship.where(user_id: current_user, friend_id: User.where(name: invitation.invitee.name)[0].id ).empty?%>
+            <% if Friendship.where(user_id: invitation.invitee.id, friend_id: current_user.id).empty? && Friendship.where(user_id: current_user.id, friend_id: invitation.invitee.id).empty?%>
               <%= simple_form_for(@friendship) do |f| %>
                 <%= f.hidden_field :friend_id, value: invitation.invitee.id %>
-                <%= f.button :submit, class: "btn btn-primary" do %>
+                <%= f.button :submit, "Send Friendship", class: "button"  do %>
                   <span class="material-symbols-outlined" >
                     thumb_up
                   </span>
                 <% end %>
               <% end %>
-            <% else %>
-              <%= link_to change_status_friendship_path(Friendship.where(user_id: User.where(name: invitation.invitee.name)[0].id,friend_id: current_user)[0], status: "accepted"), data: { turbo_method: :patch } do %>
+                <%= simple_form_for(@friendship) do |f| %>
+                  <%= f.hidden_field :friend_id, value: invitation.invitee.id %>
+                  <%= f.hidden_field :status, value: "blocked" %>
+                  <%= f.button :submit, "Block/Deny", class: "button" do %>
+                    <span class="material-symbols-outlined" >
+                      thumb_down
+                    </span>
+                  <% end %>
+              <% end %>
+              <div data-controller="toggle" class="mt-5;" id="flag">
+                <button data-action="click->toggle#fire" class="btn">
+                  <span class="material-symbols-outlined">
+                    flag
+                  </span>
+                </button>
+                <div data-toggle-target="togglableElement" class="d-none">
+                  <%= render "form", feedback: @feedback, invitee: invitation.invitee %>
+                </div>
+              </div>
+            <% elsif Friendship.where(user_id: invitation.invitee.id, friend_id: current_user.id, status: "pending").empty? == false %>
+              <%= link_to change_status_friendship_path(id: Friendship.where(user_id: invitation.invitee.id,friend_id: current_user.id)[0].id, status: "accepted"), data: { turbo_method: :patch } do %>
                 <span class="material-symbols-outlined" <% link_to "Like" %>>
                   thumb_up
                 </span>
               <% end %>
-            <% end %>
-        <%= link_to  invitation_blocked_users_path(invitation), data: {turbo_method: :post} do %>
-              <span class="material-symbols-outlined">
-                thumb_down
-              </span>
-            <% end %>
-            <div data-controller="toggle" class="mt-5;" id="flag">
-              <button data-action="click->toggle#fire" class="btn">
-                <span class="material-symbols-outlined">
-                  flag
-                </span>
-              </button>
-              <div data-toggle-target="togglableElement" class="d-none">
-                <%= render "form", feedback: @feedback, invitee: invitation.invitee %>
+                <%= link_to change_status_friendship_path(id: Friendship.where(user_id: invitation.invitee.id,friend_id: current_user.id)[0].id, status: "declined"), data: {turbo_method: :patch} do %>
+                  <span class="material-symbols-outlined">
+                    thumb_down
+                  </span>
+                <% end %>
+              <div data-controller="toggle" class="mt-5;" id="flag">
+                <button data-action="click->toggle#fire" class="btn">
+                  <span class="material-symbols-outlined">
+                    flag
+                  </span>
+                </button>
+                <div data-toggle-target="togglableElement" class="d-none">
+                  <%= render "form", feedback: @feedback, invitee: invitation.invitee %>
+                </div>
               </div>
-            </div>
+            <% elsif Friendship.where(user_id: current_user.id, friend_id: invitation.invitee.id, status: "pending").empty? == false %>
+              <p>Friendship Request Sent</p>
+            <% elsif Friendship.where(user_id: current_user.id, friend_id: invitation.invitee.id, status: "blocked").empty? == false %>
+              <p>Friendship Blocked</p>
+            <% elsif Friendship.where(user_id: current_user.id, friend_id: invitation.invitee.id, status: "declined").empty? == false %>
+              <p>Friendship Declined</p>
+            <% else %>
+            <p>Friendship <%= Friendship.where(user_id: invitation.invitee.id, friend_id: current_user.id)[0].status %></p>
+            <% end %>
           </div>
         <% end %>
       </div>

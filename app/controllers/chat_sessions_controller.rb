@@ -4,12 +4,23 @@ class ChatSessionsController < ApplicationController
 
   def create
     @chat_session = ChatSession.create(status: "active")
-    random_users = User.where('id != ?', current_user.id).order("RANDOM()").limit(3)
-    random_users.map do |user|
+    blocked_friendships = Friendship.where(user_id: current_user.id, status: ["blocked", "declined"])
+    blocked_friendships += Friendship.where(friend_id: current_user.id, status: ["blocked", "declined"])
+
+    blocked_user_ids = blocked_friendships.flat_map do |friendship|
+      friendship.friend_id == current_user.id ? friendship.user_id : friendship.friend_id
+    end.uniq
+
+    blocked_user_ids.push(current_user.id)
+
+    random_users = User.where.not(id: blocked_user_ids).order("RANDOM()").limit(3)
+
+    random_users.map do |user| # TODO dont send invitations to for users that are blocked or declined
       invitation = Invitation.new(chat_session_id: @chat_session.id, user: current_user, invitee: user, status: 'pending', name: 'Mindful Meet')
       invitation.save
       InvitationNotification.create(user_id: user.id)
     end
+    
     myinvite = Invitation.new(chat_session_id: @chat_session.id, user: current_user, invitee: current_user, status: 'pending', name: 'Mindful Meet')
     myinvite.save!
     @room = Room.create

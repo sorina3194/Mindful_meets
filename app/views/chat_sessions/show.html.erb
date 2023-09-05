@@ -6,7 +6,6 @@
     <% if @invitations_ids.count == 3 && @invitations_ids.all? { |invitee_id| !Invitation.find_by(invitee_id: invitee_id).pending? } %>
       <%= link_to "Start mindful meet.", room_path(@chat_session.room_id), class: "button" %>
     <% end %>
-
       <% @invited_users.each do |user| %>
         <div class=" users d-flex align-items-center border border-secondary-subtle ">
           <p><%= cl_image_tag user.photo.key, class: "img_rounded"%></p>
