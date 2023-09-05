@@ -14,9 +14,11 @@
             <span class="material-symbols-outlined">
               thumb_up
             </span>
-            <span class="material-symbols-outlined">
-              thumb_down
-            </span>
+            <%= link_to  invitation_blocked_users_path(invitation), data: {turbo_method: :post} do %>
+              <span class="material-symbols-outlined">
+                thumb_down
+              </span>
+            <% end %>
             <div data-controller="toggle" class="mt-5;" id="flag">
               <button data-action="click->toggle#fire" class="btn">
                 <span class="material-symbols-outlined">
