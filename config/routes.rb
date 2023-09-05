@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resources :feedbacks, only: %i[new create]
   resources :invitations, only: :index
 
-
   resources :chat_sessions, only: %i[index show create] do
     member do
       patch :finish

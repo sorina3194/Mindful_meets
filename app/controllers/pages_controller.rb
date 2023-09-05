@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if user_signed_in?
-      @invitation = Invitation.where(user_id: current_user.id).present? ? Invitation.where(inviter_id: current_user.id)[0] : false
+      @invitation = Invitation.where(user_id: current_user.id).present? ? Invitation.where(user_id: current_user.id)[0] : false
 
       @chat_session = @invitation ? @invitation.chat_session : false
 

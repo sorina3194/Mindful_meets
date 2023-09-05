@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-md-6 mt-5">
-    <%= link_to "Go to your requests", requests_friendships_path, class: "d-flex justify-content-center btn btn-outline-primary btn-sm"%>
+    <%= link_to "Go to your requests", requests_friendships_path, class: "d-flex justify-content-center btn btn-light btn-sm"%>
     <div class="card m-5">
       <div class="card-header">
         <h1>My friends 😍</h1>
       </div>
       <div class="card-body">
         <% @friendships.accepted.each do |friendship| %>
-          <div class="d-flex justify-content-between">
+          <div class="d-flex">
             <ul>
                 <li class="ml-auto whitesmoke-background"><%= friendship.friend.name%></li>
             </ul>
