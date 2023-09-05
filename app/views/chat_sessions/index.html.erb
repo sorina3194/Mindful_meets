@@ -1,34 +1,58 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet">
+
 <div class="container" id="chat_whole">
   <h1 id="chat_header">Conversations of Future Past</h1>
   <div id="chats">
     <% @chat_sessions.each do |chat| %>
       <div id="chat">
-        <h4 id="chat-time"><%= chat.created_at.strftime("%B %d, %Y") %></h4>
+
+        <h4><%= chat.created_at.strftime("%B %d, %Y") %></h4>
         <% chat.invitations.each do |invitation| %>
-          <div id="invitee">
-            <%= invitation.invitee.name %>
-          </div>
-          <div id="buttons">
-            <span class="material-symbols-outlined">
-              thumb_up
-            </span>
-            <span class="material-symbols-outlined">
-              thumb_down
-            </span>
-            <div data-controller="toggle" class="mt-5;" id="flag">
-              <button data-action="click->toggle#fire" class="btn">
-                <span class="material-symbols-outlined">
-                  flag
+
+
+          <div class="card">
+          <%= invitation.invitee.name %>
+            <div id="buttons">
+            <% @test = Friendship.where(user_id: User.where(name: invitation.invitee.name),friend_id: current_user).nil?  %>
+              <% if @test %>
+                <%= simple_form_for(@friendship) do |f| %>
+                  <%= f.hidden_field :friend_id, value: invitation.invitee.id %>
+                  <%= f.button :submit, class: "btn btn-primary" do %>
+                    <span class="material-symbols-outlined" >
+                      thumb_up
+                    </span>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <%= link_to change_status_friendship_path(Friendship.where(user_id: User.where(name: invitation.invitee.name),friend_id: current_user)) do %>
+                  <span class="material-symbols-outlined" <% link_to "Like" %>>
+                    thumb_up
+                  </span>
+                <% end %>
+              <% end %>
+
+
+              <%= link_to root_path do %>
+                <span class="material-symbols-outlined" <% link_to "Decline" %>>
+                  thumb_down
                 </span>
-              </button>
-              <div data-toggle-target="togglableElement" class="d-none">
-                <%= render "form", feedback: @feedback, invitee: invitation.invitee %>
+              <% end %>
+
+
+              <div data-controller="toggle" class="mt-5;">
+                <button data-action="click->toggle#fire" class="btn btn-outline-primary" id="btn">
+                  <span class="material-symbols-outlined">flag</span>
+                </button>
+                <div data-toggle-target="togglableElement" class="d-none">
+                  <%= render "form", feedback: @feedback, invitee: invitation.invitee %>
+                </div>
               </div>
             </div>
           </div>
         <% end %>
+      </div>
+
       </div>
     <% end %>
   </div>
