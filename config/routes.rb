@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 
   resources :friendships, only: %i[index show create destroy] do
     get :requests, on: :collection
+    member do
+      patch :change_status
+    end
   end
+
   resources :feedbacks, only: %i[new create]
   resources :invitations, only: :index
 
