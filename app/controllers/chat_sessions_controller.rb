@@ -20,6 +20,7 @@ class ChatSessionsController < ApplicationController
     @chat_sessions = ChatSession.all
     @invitations = Invitation.where(user: current_user)
     @feedback = Feedback.new
+    # @friendship_request = FriendshipRequest.new
   end
 
   def show
@@ -33,6 +34,7 @@ class ChatSessionsController < ApplicationController
     @chat_session.update(status: "ended")
     redirect_to root_path
   end
+
 
   private
 
