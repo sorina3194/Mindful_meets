@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_03_144922) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_04_172843) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,18 +62,48 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_03_144922) do
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "friend_id", null: false
+    t.string "status", default: "pending"
+    t.boolean "accepted?", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
+  create_table "invitation_notifications", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_invitation_notifications_on_user_id"
+  end
+
   create_table "invitations", force: :cascade do |t|
     t.string "video_chat_link"
     t.string "name"
     t.integer "status"
-    t.bigint "inviter_id", null: false
+    t.bigint "user_id", null: false
     t.bigint "invitee_id", null: false
     t.bigint "chat_session_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chat_session_id"], name: "index_invitations_on_chat_session_id"
     t.index ["invitee_id"], name: "index_invitations_on_invitee_id"
-    t.index ["inviter_id"], name: "index_invitations_on_inviter_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "recipient_type", null: false
+    t.bigint "recipient_id", null: false
+    t.string "type", null: false
+    t.jsonb "params"
+    t.datetime "read_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["read_at"], name: "index_notifications_on_read_at"
+    t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -116,7 +146,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_03_144922) do
   add_foreign_key "chat_sessions", "rooms"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "feedbacks", "users", column: "target_user_id"
+  add_foreign_key "friendships", "users"
+  add_foreign_key "friendships", "users", column: "friend_id"
+  add_foreign_key "invitation_notifications", "users"
   add_foreign_key "invitations", "chat_sessions"
+  add_foreign_key "invitations", "users"
   add_foreign_key "invitations", "users", column: "invitee_id"
-  add_foreign_key "invitations", "users", column: "inviter_id"
 end

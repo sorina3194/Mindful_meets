@@ -4,6 +4,7 @@ require 'open-uri'
 puts "Cleaning up Database 🧼"
 # Invitation.destroy_all
 # ChatSession.destroy_all
+Friendship.destroy_all
 User.destroy_all
 
 puts 'Creating 5 Fake Users... 😍'
@@ -163,5 +164,15 @@ emma = User.new(
 )
 emma.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 emma.save
+
+# Friendships
+friendship = Friendship.new(user: zuzanna, friend: emma, status: "pending", accepted?: false)
+friendship.save
+
+friendship2 = Friendship.new(user: zuzanna, friend: nessim, status: "accepted", accepted?: true)
+friendship2.save
+
+friendship3 = Friendship.new(user: zuzanna, friend: sorina, status: "declined", accepted?: false)
+friendship3.save
 
 puts 'Seeds are planted! 🌱🌱🌱'
