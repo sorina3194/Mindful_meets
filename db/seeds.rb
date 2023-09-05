@@ -167,33 +167,33 @@ emma.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 emma.save
 
 # Friendships
-friendship = Friendship.create(user: zuzanna, friend: emma, status: "pending", accepted?: false)
-friendship1 = Friendship.create(user: zuzanna, friend: olivia, status: "pending", accepted?: false)
-friendship3 = Friendship.create(user: zuzanna, friend: nessim, status: "accepted", accepted?: true)
+# friendship = Friendship.create(user: zuzanna, friend: emma, status: "pending", accepted?: false)
+# friendship1 = Friendship.create(user: zuzanna, friend: olivia, status: "pending", accepted?: false)
+# friendship3 = Friendship.create(user: zuzanna, friend: nessim, status: "accepted", accepted?: true)
 
-# Rooms
-room1 = Room.create(name: "Mindful Room 1", vonage_session_id: "1")
-room2 = Room.create(name: "Mindful Room 2", vonage_session_id: "2")
+# # Rooms
+# room1 = Room.create(name: "Mindful Room 1", vonage_session_id: "1")
+# room2 = Room.create(name: "Mindful Room 2", vonage_session_id: "2")
 
-# ChatSessions
-chatsession1 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room1.id)
-chatsession2 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
-chatsession3 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
-chatsession4 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
-chatsession5 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
+# # ChatSessions
+# chatsession1 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room1.id)
+# chatsession2 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
+# chatsession3 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
+# chatsession4 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
+# chatsession5 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
 
-# Invitations
-invitations1 = Invitation.new(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: zuzanna.id, invitee_id: brunna.id, chat_session_id: chatsession1.id)
-invitations1.save!
+# # Invitations
+# invitations1 = Invitation.new(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: zuzanna.id, invitee_id: brunna.id, chat_session_id: chatsession1.id)
+# invitations1.save!
 
-invitations2 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: zuzanna.id, invitee_id: emma.id, chat_session_id: chatsession1.id)
-invitations3 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: zuzanna.id, invitee_id: sorina.id, chat_session_id: chatsession1.id)
-invitations4 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: zuzanna.id, invitee_id: nessim.id, chat_session_id: chatsession1.id)
+# invitations2 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: zuzanna.id, invitee_id: emma.id, chat_session_id: chatsession1.id)
+# invitations3 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: zuzanna.id, invitee_id: sorina.id, chat_session_id: chatsession1.id)
+# invitations4 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: zuzanna.id, invitee_id: nessim.id, chat_session_id: chatsession1.id)
 
-invitations5 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: emma.id, invitee_id: zuzanna.id, chat_session_id: chatsession2.id)
-invitations6 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: brunna.id, invitee_id: zuzanna.id, chat_session_id: chatsession3.id)
-invitations7 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: sorina.id, invitee_id: zuzanna.id, chat_session_id: chatsession4.id)
-invitations8 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: nessim.id, invitee_id: zuzanna.id, chat_session_id: chatsession5.id)
+# invitations5 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: emma.id, invitee_id: zuzanna.id, chat_session_id: chatsession2.id)
+# invitations6 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: brunna.id, invitee_id: zuzanna.id, chat_session_id: chatsession3.id)
+# invitations7 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: sorina.id, invitee_id: zuzanna.id, chat_session_id: chatsession4.id)
+# invitations8 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: nessim.id, invitee_id: zuzanna.id, chat_session_id: chatsession5.id)
 
 
 puts 'Seeds are planted! 🌱🌱🌱'
