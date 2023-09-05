@@ -1,0 +1,20 @@
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet">
+<div class="row">
+  <div class="col-md-6 mt-5">
+    <% if !@friendships.empty? %>
+      <div class="card m-5">
+        <div class="card-body">
+          <% @friendships.accepted.each do |friendship| %>
+            <div class="d-flex justify-content-between">
+              <ul>
+                  <li class="ml-auto whitesmoke-background"><%= friendship.friend.name%></li>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <h4 id='loneliness'>Build your social network!</h4>
+    <% end %>
+  </div>
+</div>
