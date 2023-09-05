@@ -28,10 +28,14 @@
 
 body {
   background-color:#B1CCCC;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+}
+main {
+  flex-grow: 1;
+  overflow-y: auto; /* Add scrollbar if content overflows */
 }
 
 #videos {
