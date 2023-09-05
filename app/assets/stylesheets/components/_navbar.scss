@@ -161,10 +161,34 @@
   justify-content: space-around
 }
 
-#badge {
-  width:15px;
-  height:15px;
-  border-radius: 50px;
-  background-color: red
+.toggler__badge {
+  position: absolute;
+  top: 5px;
+  right: -60px;
+  width: 25px;
+  height: 25px;
+  background: red;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
- 
+
+#invitebutton__badge {
+  position: absolute;
+  top: 5px;
+  right: -60px;
+  width: 25px;
+  height: 25px;
+  background: red;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+#badge{
+  color:red;
+}
