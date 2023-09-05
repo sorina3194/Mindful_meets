@@ -7,15 +7,29 @@
       <div id="chat">
         <h4><%= chat.created_at.strftime("%B %d, %Y") %></h4>
         <% chat.invitations.each do |invitation| %>
+
+
           <div class="card">
           <%= invitation.invitee.name %>
             <div id="buttons">
-
-              <%= link_to friendships_path do %>
-                <span class="material-symbols-outlined" <% link_to "Like" %>>
-                  thumb_up
-                </span>
+            <% @test = Friendship.where(user_id: User.where(name: invitation.invitee.name),friend_id: current_user).nil?  %>
+              <% if @test %>
+                <%= simple_form_for(@friendship) do |f| %>
+                  <%= f.hidden_field :friend_id, value: invitation.invitee.id %>
+                  <%= f.button :submit, class: "btn btn-primary" do %>
+                    <span class="material-symbols-outlined" >
+                      thumb_up
+                    </span>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <%= link_to change_status_friendship_path(Friendship.where(user_id: User.where(name: invitation.invitee.name),friend_id: current_user)) do %>
+                  <span class="material-symbols-outlined" <% link_to "Like" %>>
+                    thumb_up
+                  </span>
+                <% end %>
               <% end %>
+
 
               <%= link_to root_path do %>
                 <span class="material-symbols-outlined" <% link_to "Decline" %>>

@@ -6,29 +6,39 @@ class FriendshipsController < ApplicationController
     @friendships = current_user.friendships
   end
 
-  # on the like method
-  # need method that sent the request friendship,
-  # then the request will be accepted and
-  # changed to friendship status
-  # on thumbs up, when clicked, create Friendship request to the user/friend.
-  # show the request on the friends profile.
-  # when accepted, create friendship, display user in friends list,
-  # and send notification back to the other user about the accepted request
-  # and display user in their friends list
-  # we need to create a friendships request model,
-  # with a create method triggered on the thumb up.
-  # i need to retrieve the invitee id from the invitation,
-  # friendship_request.create(user_id: current_user, friends_id: invitee_id)
-  # the thumbs up button is in chat sessions index html
   def create
-    @friendships = Friendship.new # (friendship_params)
-    @friendships.user = current_user
-    @friendships.save
-      # flash[:success] = 'Friendship created 🧜🏻‍♂️💃👯‍♂️🦥'
-      # redirect_to friendships_path
-    # else
-      # render 'friendships'
-    # end
+    @friendship = Friendship.new(friendship_params)# (friendship_params)
+    @friendship.status = "pending"
+    @friendship.user = current_user
+
+      if @friendship.save!
+      flash[:success] = 'Friendship created 🧜🏻‍♂️💃👯‍♂️🦥'
+      redirect_to friendships_path
+    else
+      render 'friendships'
+    end
+  end
+
+  def edit
+    @friendship = Friendship.find(params[:id])
+  end
+
+  def change_status
+    @friendship = Friendship.find(params[:id])
+    new_status = params[:status]
+
+    case new_status
+    when "open"
+      @friendship.update(status: "open")
+    when "accepted"
+      @friendship.update(status: "accepted")
+    when "declined"
+      @friendship.update(status: "declined")
+    when "blocked"
+      @friendship.update(status: "blocked")
+    else
+      flash[:alert] = "This status is not valid, sorry 😢"
+    end
   end
 
   # notification on friendship request
@@ -39,7 +49,7 @@ class FriendshipsController < ApplicationController
 
   private
 
-  # def friendship_params
-    # params.require(:friendship).permit(:user, :friend_id)
-  # end
+  def friendship_params
+    params.require(:friendship).permit(:friend_id)
+  end
 end

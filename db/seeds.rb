@@ -169,8 +169,6 @@ emma.save
 # Friendships
 friendship = Friendship.create(user: zuzanna, friend: emma, status: "pending", accepted?: false)
 friendship1 = Friendship.create(user: zuzanna, friend: olivia, status: "pending", accepted?: false)
-friendship2 = Friendship.create(user: zuzanna, friend: brunna, status: "pending", accepted?: false)
-friendship4 = Friendship.create(user: zuzanna, friend: sorina, status: "pending", accepted?: false)
 friendship3 = Friendship.create(user: zuzanna, friend: nessim, status: "accepted", accepted?: true)
 
 # Rooms

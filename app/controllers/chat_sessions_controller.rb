@@ -19,6 +19,7 @@ class ChatSessionsController < ApplicationController
   end
 
   def index
+    @friendship = Friendship.new
     @chat_sessions = ChatSession.all
     @invitations = Invitation.where(inviter: current_user)
     @feedback = Feedback.new
