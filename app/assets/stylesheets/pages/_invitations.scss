@@ -1,12 +1,7 @@
-#invitation_whole {
-  width:390px;
-  height:500px;
-
-}
-
 #invitation_header {
   padding-top:50px;
   margin-bottom: 10px;
+  font-weight:bold;
 }
 
 #invitations {
@@ -15,6 +10,7 @@
   align-items:center;
   justify-content: center;
   padding-top:30px;
+  font-family:'Nunito Sans', sans-serif
 }
 
 #invitation {
@@ -23,11 +19,13 @@
   padding-left: 100px;
   padding-right:100px;
   margin-bottom: 30px;
+  width:350px;
   background: rgba(255, 255, 255, 0.16);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(6.9px);
   -webkit-backdrop-filter: blur(6.9px);
+  font-family:'Nunito Sans', sans-serif;
 }
 
 a {
@@ -36,7 +34,7 @@ a {
 }
 
 #accept {
-  background: rgba(48, 48, 48, 0.3);
+  background: rgba(242, 242, 242, 0.3);
   border-radius: 16px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -44,4 +42,11 @@ a {
   padding-left: 30px;
   padding-bottom: 15px;
   padding-top: 15px;
+  font-weight:bold;
+  text-align:center;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+#inv-time{
+  margin-top:15px;
+  margin-bottom:30px;
 }
