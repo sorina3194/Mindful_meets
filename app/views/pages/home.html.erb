@@ -14,6 +14,19 @@
 
   <p id="philosopher"> ~ Palatable Philosopher </p>
 
+  <% my_invitation = Invitation.find_by(invitee: current_user) %>
+
+  <% if my_invitation.present? && my_invitation.status == "accepted" && ChatSession.find_by(id: my_invitation.chat_session_id).status == "pending" %>
+
+
+  <%= link_to "Let s get back to chat", chat_session_path(ChatSession.find_by(id: my_invitation.chat_session_id).id), class: "btn btn-primary", id:"chat_button2" %>
+
+  <% else %>
   <%= button_to "Let the universe decide", chat_sessions_path, class: "btn btn-primary", id:"chat_button2" %>
-  
+
+  <% end %>
+
+
+
+
 </div>

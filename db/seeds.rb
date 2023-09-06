@@ -240,7 +240,7 @@ marcel.save
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/sebaspont")
 sebastian = User.new(
-  name: "Pont Vergés Pont Vergés",
+  name: "Sebastian Pont Vergés",
   username: "sebastian",
   biography: "Hello, I am sebastian 🧑🏽‍💻",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,

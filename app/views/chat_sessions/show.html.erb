@@ -6,7 +6,7 @@
       <% if @invitations.all?(&:accepted?) %>
         <%= link_to "Start mindful meet.", room_path(@chat_session.room_id), class: "button" %>
       <% end %>
-      <%= @invitations.each do |invitation| %>
+      <% @invitations.each do |invitation| %>
         <div class=" users d-flex align-items-center border border-secondary-subtle ">
           <p><%= cl_image_tag invitation.invitee.photo.key, class: "img_rounded"%></p>
           <h1 class="p-3"><%= invitation.invitee.name  %></h1>
