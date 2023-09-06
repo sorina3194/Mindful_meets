@@ -4,7 +4,6 @@ class CreateFriendships < ActiveRecord::Migration[7.0]
       t.references :user, null: false, foreign_key: true
       t.references :friend, null: false, foreign_key: { to_table: :users }
       t.string :status, default: "pending"
-      t.boolean :accepted?, default: false
 
       t.timestamps
     end
