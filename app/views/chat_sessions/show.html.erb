@@ -1,16 +1,16 @@
 <div class="main-container-mindful">
   <center><div id="logo"></div></center>
-  <h1 class=" title">a mindful. conversation.</h1>
+  <h1 class="title">a mindful. conversation.</h1>
   <div class="users_list">
-    <div class="d-fl`ex-column ">
-    <% if @invitations_ids.count == 3 && @invitations_ids.all? { |invitee_id| !Invitation.find_by(invitee_id: invitee_id).pending? } %>
-      <%= link_to "Start mindful meet.", room_path(@chat_session.room_id), class: "button" %>
-    <% end %>
-      <% @invited_users.each do |user| %>
+    <div class="d-flex-column ">
+      <% if @invitations.all?(&:accepted?) %>
+        <%= link_to "Start mindful meet.", room_path(@chat_session.room_id), class: "button" %>
+      <% end %>
+      <%= @invitations.each do |invitation| %>
         <div class=" users d-flex align-items-center border border-secondary-subtle ">
-          <p><%= cl_image_tag user.photo.key, class: "img_rounded"%></p>
-          <h1 class="p-3"><%= user.name  %></h1>
-          <% if Invitation.find_by(invitee_id: user).pending? %>
+          <p><%= cl_image_tag invitation.invitee.photo.key, class: "img_rounded"%></p>
+          <h1 class="p-3"><%= invitation.invitee.name  %></h1>
+          <% if invitation.pending? %>
             <h4 class="p-3">Pending</h4>
           <% else %>
             <h4 class="p-3">Accepted</h4>
