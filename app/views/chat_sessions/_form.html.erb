@@ -4,7 +4,7 @@
   <h2>Feedback</h2>
   <%= simple_form_for(@feedback) do |f| %>
     <div>
-      <%= f.input :target_user_id, as: :hidden, input_html: { value: invitee.id}  %>
+      <%= f.input :target_user_id, as: :hidden, input_html: { value: friendship.friend.id}  %>
       <%= f.input :content,
                   required: true,
                   autofocus: true%>
