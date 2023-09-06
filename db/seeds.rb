@@ -200,7 +200,7 @@ ozge = User.new(
 ozge.photo.attach(io: file, filename: "ozge.jpg", content_type: "image/jpg")
 ozge.save
 
-file = URI.open("https://kitt.lewagon.com/placeholder/users/irinemancebo")
+file = URI.open("https://kitt.lewagon.com/placeholder/users/IreneMancebo")
 irene = User.new(
   name: "Irene Martínez Mancebo",
   username: "irene",
