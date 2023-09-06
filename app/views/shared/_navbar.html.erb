@@ -1,5 +1,8 @@
 <div class="menu-wrap">
   <input type="checkbox" class="toggler">
+  <% if user_signed_in? && InvitationNotification.where(user_id: current_user.id).present? %>
+      <span class="toggler__badge"></span>
+  <% end %>
   <div class="hamburger"><div></div></div>
     <div class="menu">
       <div>
@@ -8,7 +11,7 @@
             <% if user_signed_in? %>
               <% if InvitationNotification.where(user_id: current_user.id).present? %>
                 <li class="nav-item">
-                  <%= link_to "Invitations", invitations_path, class: "dropdown-item"%><div id="badge"></div>
+                  <%= link_to "Invitations", invitations_path, class:"dropdown-item"%><div id="badge"></div>
                 </li>
               <% else %>
                 <li class="nav-item">

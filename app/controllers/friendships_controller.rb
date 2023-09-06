@@ -8,12 +8,12 @@ class FriendshipsController < ApplicationController
 
   def create
     @friendship = Friendship.new(friendship_params)# (friendship_params)
-    @friendship.status = "pending"
+    friendship_params[:status].empty? ? @friendship.status = "pending" : false
+
     @friendship.user = current_user
 
-      if @friendship.save!
-      flash[:success] = 'Friendship created 🧜🏻‍♂️💃👯‍♂️🦥'
-      redirect_to friendships_path
+    if @friendship.save!
+      redirect_to friendships_path, notice: "Friendship created"
     else
       render 'friendships'
     end
@@ -36,6 +36,7 @@ class FriendshipsController < ApplicationController
     else
       flash[:alert] = "This status is not valid, sorry 😢"
     end
+    redirect_to chat_sessions_path
   end
 
   # notification on friendship request
@@ -47,6 +48,6 @@ class FriendshipsController < ApplicationController
   private
 
   def friendship_params
-    params.require(:friendship).permit(:friend_id)
+    params.require(:friendship).permit(:friend_id, :status)
   end
 end

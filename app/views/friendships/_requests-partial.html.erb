@@ -1,10 +1,7 @@
 <div class="row">
   <div class="col-md-6 mt-5">
-    <%= link_to "Back to your Friends", friendships_path, class: "d-flex justify-content-center btn btn-light btn-sm"%>
+    <% if !@pending_received_requests.nil? %>
       <div class="card m-5">
-        <div class="card-header">
-          <h1>Friend Requests ⌛️</h1>
-        </div>
         <div class="card-body">
             <% @pending_sent_requests.each do |friendship| %>
               <ul>
@@ -13,5 +10,6 @@
             <% end %>
         </div>
       </div>
+    <% end %>
   </div>
 </div>
