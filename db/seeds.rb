@@ -47,7 +47,120 @@ puts 'Creating 5 Fake Users... 😍'
 #   "https://kitt.lewagon.com/placeholder/users/lamoureuxmarie",
 #   "https://kitt.lewagon.com/placeholder/users/jhibbeard89",
 #   "https://kitt.lewagon.com/placeholder/users/eduroldani"
-# ]
+
+file = URI.open("https://kitt.lewagon.com/placeholder/users/zoevandantzig")
+zoe = User.new(
+  name: "Zoe van Dantzig",
+  username: "zoe",
+  biography: "Just stay cool be happy and turn ideas into code",
+  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
+  city: Faker::Address.city,
+  hobbies: Faker::Hobby.activity,
+  music_genres: Faker::Music.genre,
+  book_genres: Faker::Book.genre,
+  movie_genres: Faker::Movie.title,
+  favorite_animal: Faker::Creature::Animal.name,
+  email: "zoe@test.com",
+  password: "123456"
+  )
+zoe.photo.attach(io: file, filename: "zoe.jpg", content_type: "image/jpg")
+zoe.save
+
+file = URI.open("https://kitt.lewagon.com/placeholder/users/pbragamiranda")
+pedro = User.new(
+  name: "Pedro Miranda",
+  username: "pedro",
+  biography: "Just stay cool, be happy and turn ideas into code 🧜🏻‍♂️",
+  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
+  city: Faker::Address.city,
+  hobbies: Faker::Hobby.activity,
+  music_genres: Faker::Music.genre,
+  book_genres: Faker::Book.genre,
+  movie_genres: Faker::Movie.title,
+  favorite_animal: Faker::Creature::Animal.name,
+  email: "pedro@test.com",
+  password: "123456"
+  )
+pedro.photo.attach(io: file, filename: "pedro.jpg", content_type: "image/jpg")
+pedro.save
+
+file = URI.open("https://kitt.lewagon.com/placeholder/users/santiagosan93")
+santi = User.new(
+  name: "Santiago Sanchez",
+  username: "santi",
+  biography: "Let us rock, I am the best coding hero 🚀",
+  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
+  city: Faker::Address.city,
+  hobbies: Faker::Hobby.activity,
+  music_genres: Faker::Music.genre,
+  book_genres: Faker::Book.genre,
+  movie_genres: Faker::Movie.title,
+  favorite_animal: Faker::Creature::Animal.name,
+  email: "santi@test.com",
+  password: "123456"
+  )
+santi.photo.attach(io: file, filename: "santi.jpg", content_type: "image/jpg")
+santi.save
+
+file = URI.open("https://kitt.lewagon.com/placeholder/users/lamoureuxmarie")
+marie = User.new(
+  name: "Marie Lamoureux",
+  username: "marie",
+  biography: "A french coding specialist yuhuhu 💃",
+  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
+  city: Faker::Address.city,
+  hobbies: Faker::Hobby.activity,
+  music_genres: Faker::Music.genre,
+  book_genres: Faker::Book.genre,
+  movie_genres: Faker::Movie.title,
+  favorite_animal: Faker::Creature::Animal.name,
+  email: "marie@test.com",
+  password: "123456"
+  )
+marie.photo.attach(io: file, filename: "marie.jpg", content_type: "image/jpg")
+marie.save
+
+file = URI.open("https://kitt.lewagon.com/placeholder/users/jhibbeard89")
+james = User.new(
+  name: "James Hibbeard",
+  username: "james",
+  biography: "A super coding hero from le wagon 🤙🏻",
+  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
+  city: Faker::Address.city,
+  hobbies: Faker::Hobby.activity,
+  music_genres: Faker::Music.genre,
+  book_genres: Faker::Book.genre,
+  movie_genres: Faker::Movie.title,
+  favorite_animal: Faker::Creature::Animal.name,
+  email: "james@test.com",
+  password: "123456"
+  )
+james.photo.attach(io: file, filename: "james.jpg", content_type: "image/jpg")
+james.save
+
+file = URI.open("https://kitt.lewagon.com/placeholder/users/eduroldani")
+edu = User.new(
+  name: "Edu Roldan",
+  username: "edu",
+  biography: "Another super hero 💪🏽",
+  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
+  city: Faker::Address.city,
+  hobbies: Faker::Hobby.activity,
+  music_genres: Faker::Music.genre,
+  book_genres: Faker::Book.genre,
+  movie_genres: Faker::Movie.title,
+  favorite_animal: Faker::Creature::Animal.name,
+  email: "edu@test.com",
+  password: "123456"
+  )
+edu.photo.attach(io: file, filename: "edu.jpg", content_type: "image/jpg")
+edu.save
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/brunna-monteiro")
 brunna = User.new(
@@ -55,7 +168,7 @@ brunna = User.new(
   username: "brunnaaaa",
   biography: "A brazilian lawyer singer super hero 🦸🏼‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Being stressed all the time"].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
   city: Faker::Address.city,
   hobbies: Faker::Hobby.activity,
   music_genres: Faker::Music.genre,
@@ -73,9 +186,9 @@ file = URI.open("https://kitt.lewagon.com/placeholder/users/sorina3194")
 olivia = User.new(
   name: "Olivia Feldman",
   username: Faker::Internet.username,
-  biography: Faker::Lorem.sentences,
+  biography: "Hello, I'm Olivia, positive, funny, easy going person 🙋🏽‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Being stressed all the time"].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
   city: Faker::Address.city,
   hobbies: Faker::Hobby.activity,
   music_genres: Faker::Music.genre,
@@ -96,9 +209,9 @@ zuzanna = User.new(
   name: "Zuzanna Dobak",
   biography: "Hello, I'm Zuzanna 🙋🏽‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Being stressed all the time"].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
   city: "Berlin",
-  hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Being stressed all the time"].sample,
+  hobbies: Faker::Hobby.activity,
   music_genres: ["Metal", "Psy Trance", "Classic", "HipHop😎", "Rock🤘"].sample,
   book_genres: ["Romance", "Crime", "Classics"].sample,
   movie_genres: ["Romance", "Crime", "Classics", "Action"].sample,
@@ -115,9 +228,9 @@ nessim = User.new(
   name: "Nessim Khayyat",
   biography: "Hello, I'm Nessim 🙋🏻",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Being stressed all the time"].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
   city: "Berlin",
-  hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Being stressed all the time"].sample,
+  hobbies: Faker::Hobby.activity,
   music_genres: ["Metal", "Psy Trance", "Classic", "HipHop😎", "Rock🤘"].sample,
   book_genres: ["Romance", "Crime", "Classics"].sample,
   movie_genres: ["Romance", "Crime", "Classics", "Action"].sample,
@@ -134,9 +247,9 @@ sorina = User.new(
   name: "Sorina Tudor",
   biography: "Hello, I'm Sorina 🙋‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Being stressed all the time"].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
   city: "Berlin",
-  hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Being stressed all the time"].sample,
+  hobbies: Faker::Hobby.activity,
   music_genres: ["Metal", "Psy Trance", "Classic", "HipHop😎", "Rock🤘"].sample,
   book_genres: ["Romance", "Crime", "Classics"].sample,
   movie_genres: ["Romance", "Crime", "Classics", "Action"].sample,
@@ -153,9 +266,9 @@ emma = User.new(
   name: "Emma Ruenzel",
   biography: "Hello, I'm Emma 🧞‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Being stressed all the time"].sample,
+  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
   city: "Berlin",
-  hobbies: ["Eating", "Coding", "Sometimes yoga, but very seldomly", "Sleeping", "Boxing", "Collecting stamps", "Visualise things", "Reading cards", "Climbing trees", "Playing ukulele", "Being stressed all the time"].sample,
+  hobbies: Faker::Hobby.activity,
   music_genres: ["Metal", "Psy Trance", "Classic", "HipHop😎", "Rock🤘"].sample,
   book_genres: ["Romance", "Crime", "Classics"].sample,
   movie_genres: ["Romance", "Crime", "Classics", "Action"].sample,
@@ -194,6 +307,5 @@ emma.save
 # invitations6 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: brunna.id, invitee_id: zuzanna.id, chat_session_id: chatsession3.id)
 # invitations7 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: sorina.id, invitee_id: zuzanna.id, chat_session_id: chatsession4.id)
 # invitations8 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: nessim.id, invitee_id: zuzanna.id, chat_session_id: chatsession5.id)
-
 
 puts 'Seeds are planted! 🌱🌱🌱'
