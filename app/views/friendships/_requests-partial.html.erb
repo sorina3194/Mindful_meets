@@ -1,15 +1,40 @@
-<div class="row">
-  <div class="col-md-6 mt-5">
-    <% if !@pending_received_requests.nil? %>
-      <div class="card m-5">
-        <div class="card-body">
-            <% @pending_sent_requests.each do |friendship| %>
-              <ul>
-                <li><%= friendship.friend.name unless friendship.status == "declined" %></li>
-              </ul>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet">
+<%# TODO finish the friendship status for the flag, create feedback and block user ....
+Make sure to remove you as one of the potential users to send a friendship to...
+look into how to avoid opening a new session if part of one already...
+display friendships on the friendslist and a button that directs to the users profile...
+xxx remove column accepted from friends table and seed some accepted friendships and some more users...
+find a better way to make the video chat  %>
+
+  <h1 id="chat_header">Conversations of Future Past</h1>
+  <div id="chats">
+    <% @friendships.pending.each do |friendship| %>
+      <div id="chat">
+        <div id="invitee">
+        <% if current_user.name == friendship.friend.name %>
+            <%= friendship.user.name %>
+        <% else %>
+            <%= friendship.friend.name %>
+        <% end %>
+        </div>
+        <div id="buttons">
+          <% if friendship.pending? %>
+            <% if current_user != friendship.user %>
+              <%= link_to "Accept", change_status_friendship_path(friendship.id, status: "accepted"), data: {turbo_method: :patch} %>
+              <%= link_to "Decline", change_status_friendship_path(friendship.id, status: "declined"), data: {turbo_method: :patch} %>
+              <%= link_to "Block", change_status_friendship_path(friendship.id, status: "blocked"), data: {turbo_method: :patch} %>
+            <% else %>
+              <p>Friendship request is pending</p>
             <% end %>
+          <% elsif friendship.accepted? %>
+            <p>Friendship accepted!</p>
+          <% elsif friendship.declined? %>
+            <p>Friendship declined</p>
+          <% elsif friendship.blocked? %>
+            <p>Friendship blocked</p>
+          <% end %>
         </div>
       </div>
     <% end %>
   </div>
-</div>

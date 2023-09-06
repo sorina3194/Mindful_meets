@@ -4,6 +4,11 @@ class FriendshipsController < ApplicationController
 
   def index
     @friendships = current_user.friendships
+
+    # @chat_session = ChatSession.where(user_id: current_user.id)
+    # @invitations = @chat_session.invitations.where.not(invitee_id: current_user.id)
+    # @requested_friendships = @invitations.map do |invitation|
+    #   Friendship.find_by(user_id: invitation.invitee_id, friend_id: current_user.id) || Friendship.find_by(friend_id: invitation.invitee_id, user_id: current_user.id) || Friendship.new(user_id: current_user.id, friend_id: invitation.invitee_id)
   end
 
   def create
@@ -30,7 +35,7 @@ class FriendshipsController < ApplicationController
     else
       flash[:alert] = "This status is not valid, sorry 😢"
     end
-    redirect_to chat_sessions_path
+    redirect_to request.referrer
   end
 
   # notification on friendship request

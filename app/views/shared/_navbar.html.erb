@@ -19,12 +19,12 @@
                 </li>
               <% end %>
               <li class="nav-item">
-                <%= link_to "History", chat_sessions_path, class: "nav-link" %>
+                <%= link_to "Chat Session Last", chat_sessions_path, class: "nav-link" %>
               </li>
-              <li>
+
               <% unless current_user.chat_sessions.empty?%>
                 <li class="nav-item">
-                  <%= link_to "Past Conversation", feedback_chat_session_path(current_user.chat_sessions.last), class: "nav-link" %>
+                  <%= link_to "Chat Sessions All", feedback_chat_session_path(current_user.chat_sessions.last), class: "nav-link" %>
                 </li>
               <% end %>
               <li>

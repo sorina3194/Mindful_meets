@@ -13,28 +13,14 @@ find a better way to make the video chat  %>
     <% @friendships.each do |friendship| %>
       <div id="chat">
         <div id="invitee">
-          <%= friendship.friend.name %>
+        <% if current_user.name == friendship.friend.name %>
+            <%= friendship.user.name %>
+        <% else %>
+            <%= friendship.friend.name %>
+        <% end %>
         </div>
         <div id="buttons">
-          <% if friendship.persisted? %>
-
-            <% if friendship.pending? %>
-              <% if current_user != friendship.user %>
-                <button>Accept</button>
-                <button>Decline</button>
-                <button>Give Feedback</button>
-              <% else %>
-                <p>Friendship request is pending</p>
-              <% end %>
-            <% elsif friendship.accepted? %>
-              <p>Friendship accepted!</p>
-            <% elsif friendship.declined? %>
-              <p>Friendship declined</p>
-            <% elsif friendship.blocked? %>
-              <p>Friendship blocked</p>
-            <% end %>
-
-          <% else %>
+          <% unless friendship.persisted? %>
             <%# Add a friend %>
             <%= simple_form_for friendship do |f| %>
               <%= f.input :user_id, as: :hidden %>
