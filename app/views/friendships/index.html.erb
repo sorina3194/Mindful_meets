@@ -11,7 +11,7 @@
   <div class="partial-container">
 
     <div class="card-container" data-slider-target="friendshipsContainer">
-      <%= render "friendships-partial" %>
+      <%= render "friendships-partial", friendships: @friendships %>
     </div>
 
     <div class="card-container closed" data-slider-target="requestsContainer" >

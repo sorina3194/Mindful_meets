@@ -8,15 +8,9 @@ class FriendshipsController < ApplicationController
 
   def create
     @friendship = Friendship.new(friendship_params)# (friendship_params)
-    friendship_params[:status].empty? ? @friendship.status = "pending" : false
 
-    @friendship.user = current_user
-
-    if @friendship.save!
-      redirect_to friendships_path, notice: "Friendship created"
-    else
-      render 'friendships'
-    end
+    @friendship.save
+    redirect_to feedback_chat_session_path(params[:chat_session_id]), notice: "Friendship request sent"
   end
 
   def edit
@@ -48,6 +42,6 @@ class FriendshipsController < ApplicationController
   private
 
   def friendship_params
-    params.require(:friendship).permit(:friend_id, :status)
+    params.require(:friendship).permit(:user_id, :friend_id, :status)
   end
 end

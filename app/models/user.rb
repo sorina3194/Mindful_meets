@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :invitations, dependent: :destroy
   has_many :invitations_received, class_name: 'Invitation', foreign_key: :invitee_id, dependent: :destroy
 
-  has_many :chat_session, through: :invitations, dependent: :destroy
+  has_many :chat_sessions, -> { distinct }, through: :invitations, dependent: :destroy
 
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
