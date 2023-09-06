@@ -85,4 +85,3 @@ gem "cloudinary"
 gem "httparty"
 gem "opentok", "~> 4.7"
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
-gem "meta-tags"

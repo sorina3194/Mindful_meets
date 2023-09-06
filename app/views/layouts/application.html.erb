@@ -2,9 +2,10 @@
 <html>
   <head>
     <title>mindful meets. connect like-minded people.</title>
-    <%= display_meta_tags site: "mindful meets." %>
+        <%# For the Open Graph meta tags  %>
     <%= favicon_link_tag %>
-    <%= display_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= tag :meta, property: "og:image", content: image_url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80") %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
