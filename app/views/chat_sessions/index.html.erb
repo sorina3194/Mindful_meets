@@ -1,0 +1,19 @@
+<div id="chat_header">
+  <h1>Conversations of Future Past</h1>
+</div>
+<div class="container" id="chat_whole">
+  <div id="chats">
+    <% @chat_sessions.each do |chat| %>
+      <div id="chat">
+        <h4 id=chat-time><%= chat.created_at.strftime("%B %d, %Y") %></h4>
+        <% chat.invitations.each do |invitation| %>
+          <div id="invitee">
+            <%= cl_image_tag invitation.invitee.photo.key, class: "img_rounded"%></p>
+            <%= invitation.invitee.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
