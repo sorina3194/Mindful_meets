@@ -50,7 +50,7 @@ puts 'Creating 5 Fake Users... 😍'
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/buklewski")
 joel = User.new(
-  name: "Joel Buklewskk",
+  name: "Joel Buklewski",
   username: "joel",
   biography: "Hello, I am Joel 👨🏻‍🎓",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
