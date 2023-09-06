@@ -1,5 +1,5 @@
 class ChatSession < ApplicationRecord
-  has_many :invitations
+  has_many :invitations, dependent: :destroy
 
   enum status: { pending: "pending", active: "active", completed: "conpleted" }
 
