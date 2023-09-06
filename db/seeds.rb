@@ -430,7 +430,7 @@ edu.save
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/brunna-monteiro")
 brunna = User.new(
-  name: "Brunna",
+  name: "Brunna Monteiro",
   username: "brunnaaaa",
   biography: "A brazilian lawyer singer super hero 🦸🏼‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
@@ -450,7 +450,7 @@ brunna.save
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/ofeldman516")
 olivia = User.new(
-  name: "Olivia",
+  name: "Olivia Feldman",
   username: Faker::Internet.username,
   biography: "Hello, I'm Olivia, positive, funny, easy going person 🙋🏽‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
@@ -470,7 +470,7 @@ olivia.save
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/fafafarah")
 farah = User.new(
-  name: "Farah",
+  name: "Farah Boughalem",
   username: Faker::Internet.username,
   biography: "Hello, I am Farah 💪🏽",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
@@ -492,7 +492,7 @@ puts "Creating project users 🧜🏻‍♂️ 💃 👱🏼‍♀️ 😍"
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/zuzannadobak")
 zuzanna = User.new(
-  name: "Zuzanna",
+  name: "Zuzanna Dobak",
   biography: "Hello, I'm Zuzanna 🙋🏽‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
   skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
@@ -511,7 +511,7 @@ puts "#{User.count} users in database"
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/nessimkh")
 nessim = User.new(
-  name: "Nessim",
+  name: "Nessim Khayyat",
   biography: "Hello, I'm Nessim 🙋🏻",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
   skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
@@ -530,7 +530,7 @@ puts "#{User.count} users in database"
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/sorina3194")
 sorina = User.new(
-  name: "Sorina",
+  name: "Sorina Tudor",
   biography: "Hello, I'm Sorina 🙋‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
   skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
@@ -548,7 +548,7 @@ sorina.save
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/emmvs")
 emma = User.new(
-  name: "Emma",
+  name: "Emma Ruenzel",
   biography: "Hello, I'm Emma 🧞‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
   skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
