@@ -1,12 +1,14 @@
 #chat_whole {
   width:390px;
-  height:500px;
-
 }
 
 #chat_header {
-  padding-top:100px;
-  margin-bottom: 10px;
+  display:flex;
+  justify-content: center;
+  align-items:start;
+  font-family:'Nunito Sans', sans-serif;
+  font-weight:bold;
+  margin-top:60px;
 }
 
 #chat-time{
@@ -25,7 +27,7 @@
   padding-top:40px;
   padding-bottom:20px;
   width:350px;
-  margin-bottom: 30px;
+  margin-bottom:10px;
   background: rgba(255, 255, 255, 0.16);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
@@ -34,26 +36,9 @@
   text-align:center;
 }
 
-a {
-  text-decoration: none;
-  color:#2b3f38;
-}
-
-#buttons {
-  display:flex;
-  flex-direction:row;
-  justify-content:space-evenly;
-  margin-bottom:30px;
-  align-items:center;
-}
-
 #invitee{
   margin-top:40px;
-  margin-bottom:20px;
+  margin-bottom:40px;
   font-size:18px;
   font-family:'Nunito Sans', sans-serif;
-}
-
-#flag{
-  padding-top:5px;
 }

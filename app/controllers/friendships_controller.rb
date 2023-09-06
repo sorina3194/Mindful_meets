@@ -41,8 +41,8 @@ class FriendshipsController < ApplicationController
 
   # notification on friendship request
   def requests
-    @pending_sent_requests = Friendship.where(user_id: current_user.id, status: "pending", accepted?: false)
-    @pending_received_requests = Friendship.where(friend_id: current_user.id, status: "pending", accepted?: false)
+    @pending_sent_requests = Friendship.where(user_id: current_user.id, status: "pending")
+    @pending_received_requests = Friendship.where(friend_id: current_user.id, status: "pending")
   end
 
   private
