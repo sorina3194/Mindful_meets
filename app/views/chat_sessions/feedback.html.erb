@@ -26,7 +26,8 @@ find a better way to make the video chat  %>
               <%= f.input :user_id, as: :hidden %>
               <%= f.input :friend_id, as: :hidden %>
               <input type="text" name="chat_session_id" value="<%= @chat_session.id %>" hidden="true">
-              <%= f.submit "Send Friend Request", class: "button_requests" %>
+              <%= f.submit "Friendship Request", class: "btn btn-secondary" %>
+
             <% end %>
 
             <%= simple_form_for friendship do |f| %>
@@ -34,7 +35,7 @@ find a better way to make the video chat  %>
               <%= f.input :user_id, as: :hidden %>
               <%= f.input :friend_id, as: :hidden %>
               <input type="text" name="chat_session_id" value="<%= @chat_session.id %>" hidden="true">
-              <%= f.submit "Block", class: "button_requests" %>
+              <%= f.submit "Block User", class: "btn btn-danger" %>
             <% end %>
           <% end %>
         </div>
