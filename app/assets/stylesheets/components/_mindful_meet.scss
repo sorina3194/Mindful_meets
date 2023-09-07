@@ -40,6 +40,7 @@ h1 {
   color: $my_text;
   text-align: center;
   padding: 5px;
+  font-size: 25px;
   font-family:'Times New Roman', Times, serif;
   font-weight:bold;
   border: #97bdae;
@@ -52,10 +53,20 @@ h1 {
 
 a {
   text-decoration: none;
-
 }
 
 #session_button {
+  color: $my_text;
+  padding: 5px;
+  font-size: 25px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight:bold;
+  border: #97bdae;
+  margin: 10px;
   text-align: center;
   margin: 20px;
+}
+
+#update_button {
+  text-align: center;
 }

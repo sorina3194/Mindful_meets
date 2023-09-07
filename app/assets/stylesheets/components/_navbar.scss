@@ -154,13 +154,6 @@
   transition: color 0.4s ease;
 }
 
-#items {
-  display:flex;
-  flex-direction:column;
-  text-align:center;
-  justify-content: space-around
-}
-
 .toggler__badge {
   position: absolute;
   top: 5px;

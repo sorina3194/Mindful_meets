@@ -27,11 +27,16 @@ main {
 }
 
 #videos {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
   gap: 2rem;
 }
 
 .OT_root {
   height: 240px !important;
+}
+
+#end_chat {
+  padding: 40px;
+  text-align: center;
 }
