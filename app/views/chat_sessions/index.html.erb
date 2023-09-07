@@ -1,5 +1,6 @@
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet">
 <div id="chat_header">
-  <h1>Conversations of Future Past</h1>
+  <h1>Conversations</h1>
 </div>
 <div class="container" id="chat_whole">
   <div id="chats">
@@ -8,8 +9,8 @@
         <h4 id=chat-time><%= chat.created_at.strftime("%B %d, %Y") %></h4>
         <% chat.invitations.each do |invitation| %>
           <div id="invitee">
-            <%= cl_image_tag invitation.invitee.photo.key, class: "img_rounded"%>
-            <%= invitation.invitee.name %>
+            <%= cl_image_tag invitation.invitee.photo.key, class: "img_rounded w-45 h-45"%>
+            <div id="invitee-name"> <%= invitation.invitee.name %></div>
           </div>
         <% end %>
       </div>

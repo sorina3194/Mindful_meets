@@ -7,17 +7,17 @@ display friendships on the friendslist and a button that directs to the users pr
 xxx remove column accepted from friends table and seed some accepted friendships and some more users...
 find a better way to make the video chat  %>
 
-
-  <h1 id="chat_header">Users</h1>
-  <div id="chats">
+  <h1 id="bff_header">Potential BFFs</h1>
+  <div id="users">
     <% @friendships.each do |friendship| %>
-      <div id="chat">
-        <div id="invitee">
-        <% if current_user.name == friendship.friend.name %>
-            <%= friendship.user.name %>
-        <% else %>
-            <%= friendship.friend.name %>
-        <% end %>
+      <div id="user">
+        <div id="bff">
+         <p id="pfp"> <%= cl_image_tag friendship.friend.photo.key, class: "img_rounded w-50 h-50"%></p>
+          <% if current_user.name == friendship.friend.name %>
+             <p id="username"> <%= friendship.user.name %></p>
+          <% else %>
+              <%= friendship.friend.name %>
+          <% end %>
         </div>
         <div id="buttons">
           <% unless friendship.persisted? %>
@@ -27,6 +27,7 @@ find a better way to make the video chat  %>
               <%= f.input :friend_id, as: :hidden %>
               <input type="text" name="chat_session_id" value="<%= @chat_session.id %>" hidden="true">
               <%= f.submit "Friendship Request", class: "btn btn-secondary" %>
+
             <% end %>
 
             <%= simple_form_for friendship do |f| %>
