@@ -9,11 +9,19 @@
   <% end %>
 
   <%# My Friends %>
-  <%= link_to friendships_path do %>
-    <span class="material-symbols-outlined" <% link_to "Friendships" %>>
-      diversity_2
-    </span>
-  <% end %>
+  <%# Notification goes here %>
+
+    <%= link_to friendships_path do %>
+      <% if user_signed_in? %>
+        <% friendships = current_user.friendships.where(friend_id: current_user.id, status: "pending") %>
+        <% if friendships.count > 0 %>
+          <div id="friendship-notification"><%= friendships.count %></div>
+        <% end %>
+      <% end %>
+        <span class="material-symbols-outlined" <% link_to "Friendships" %>>
+          diversity_2
+        </span>
+    <% end %>
 
   <%# My Profile %>
   <% if user_signed_in? %>

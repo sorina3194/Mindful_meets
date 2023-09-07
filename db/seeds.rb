@@ -278,7 +278,7 @@ iyayi.save
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/nadjajr")
 nadja = User.new(
-  name: "Nadja Ruenzel",
+  name: "Nadja Rünzel",
   username: "Nadja",
   biography: "Stay cool, be happy and spread the sunny energy 🦸🏼‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
@@ -551,7 +551,7 @@ sorina.save
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/emmvs")
 emma = User.new(
-  name: "Emma Ruenzel",
+  name: "Emma Rünzel",
   username: "Emma",
   biography: "Hello, I'm Emma 🧞‍♀️",
   age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
@@ -603,5 +603,11 @@ friendship = Friendship.create(user: sorina, friend: emma, status: "accepted")
 friendship1 = Friendship.create(user: sorina, friend: olivia, status: "accepted")
 friendship3 = Friendship.create(user: sorina, friend: brunna, status: "accepted")
 friendship4 = Friendship.create(user: sorina, friend: nessim, status: "accepted")
+friendship5 = Friendship.create(user: zuzanna, friend: nessim, status: "pending")
+friendship6 = Friendship.create(user: zuzanna, friend: emma, status: "pending")
+friendship7 = Friendship.create(user: zuzanna, friend: brunna, status: "pending")
+friendship8 = Friendship.create(user: zuzanna, friend: farah, status: "pending")
+friendship9 = Friendship.create(user: zuzanna, friend: joel, status: "pending")
+friendship9 = Friendship.create(user: joel, friend: zuzanna, status: "pending")
 
 puts 'Seeds are planted! 🌱🌱🌱'
