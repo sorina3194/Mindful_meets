@@ -18,9 +18,9 @@
   <%# My Profile %>
   <% if user_signed_in? %>
     <%= link_to showprofile_path(current_user.id) do %>
+      <%= current_user.name %>
       <span class="material-symbols-outlined" >
         person
       </span>
     <% end %>
   <% end %>
-

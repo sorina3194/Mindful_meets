@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet">
+<%# TODO finish the friendship status for the flag, create feedback and block user ....
+Make sure to remove you as one of the potential users to send a friendship to...
+look into how to avoid opening a new session if part of one already...
+display friendships on the friendslist and a button that directs to the users profile...
+xxx remove column accepted from friends table and seed some accepted friendships and some more users...
+find a better way to make the video chat  %>
+
+
+  <h1 id="chat_header">Conversations of Future Past</h1>
+  <div id="chats">
+    <% @friendships.each do |friendship| %>
+      <div id="chat">
+        <div id="invitee">
+        <% if current_user.name == friendship.friend.name %>
+            <%= friendship.user.name %>
+        <% else %>
+            <%= friendship.friend.name %>
+        <% end %>
+        </div>
+        <div id="buttons">
+          <% unless friendship.persisted? %>
+            <%# Add a friend %>
+            <%= simple_form_for friendship do |f| %>
+              <%= f.input :user_id, as: :hidden %>
+              <%= f.input :friend_id, as: :hidden %>
+              <input type="text" name="chat_session_id" value="<%= @chat_session.id %>" hidden="true">
+              <%= f.submit "Send request", class: "btn btn-primary" %>
+            <% end %>
+
+            <%= simple_form_for friendship do |f| %>
+              <%= f.input :status, input_html: {value: "declined"}, as: :hidden %>
+              <%= f.input :user_id, as: :hidden %>
+              <%= f.input :friend_id, as: :hidden %>
+              <input type="text" name="chat_session_id" value="<%= @chat_session.id %>" hidden="true">
+              <%= f.submit "Decline request", class: "btn btn-primary" %>
+            <% end %>
+
+            <%= simple_form_for friendship do |f| %>
+              <%= f.input :status, input_html: {value: "blocked"}, as: :hidden %>
+              <%= f.input :user_id, as: :hidden %>
+              <%= f.input :friend_id, as: :hidden %>
+              <input type="text" name="chat_session_id" value="<%= @chat_session.id %>" hidden="true">
+              <%= f.submit "Block request", class: "btn btn-primary" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>

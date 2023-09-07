@@ -12,7 +12,6 @@ class PagesController < ApplicationController
         @display_alert = false
       end
     end
-
   end
 
   def show_profile

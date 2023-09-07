@@ -1,14 +1,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet">
 <div class="row">
   <div class="col-md-6 mt-5">
-    <% if !@friendships.empty? %>
+    <% if friendships.present? %>
       <div class="card m-5">
         <div class="card-body">
-          <% @friendships.accepted.each do |friendship| %>
+          <% friendships.accepted.each do |friendship| %>
             <div class="d-flex justify-content-between">
               <ul>
                   <li class="ml-auto whitesmoke-background"><%= friendship.friend.name%></li>
               </ul>
+              <%= link_to "Profile" , showprofile_path(friendship.friend.id) %>
             </div>
           <% end %>
         </div>

@@ -11,7 +11,8 @@ class RoomsController < ApplicationController
   def show
     opentok = OpenTok::OpenTok.new "47771161", "507d55d52d1a32de0b022531770fa56b08a81d2a"
     @token = opentok.generate_token @room.vonage_session_id, { name: current_user.name }
-    @chat_session = ChatSession.where(room_id: @room.id)[0]
+    @chat_session = ChatSession.find_by(room_id: @room.id)
+    @chat_session.active!
   end
 
   # GET /rooms/new

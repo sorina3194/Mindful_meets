@@ -4,19 +4,18 @@ class FriendshipsController < ApplicationController
 
   def index
     @friendships = current_user.friendships
+
+    # @chat_session = ChatSession.where(user_id: current_user.id)
+    # @invitations = @chat_session.invitations.where.not(invitee_id: current_user.id)
+    # @requested_friendships = @invitations.map do |invitation|
+    #   Friendship.find_by(user_id: invitation.invitee_id, friend_id: current_user.id) || Friendship.find_by(friend_id: invitation.invitee_id, user_id: current_user.id) || Friendship.new(user_id: current_user.id, friend_id: invitation.invitee_id)
   end
 
   def create
     @friendship = Friendship.new(friendship_params)# (friendship_params)
-    friendship_params[:status].empty? ? @friendship.status = "pending" : false
 
-    @friendship.user = current_user
-
-    if @friendship.save!
-      redirect_to friendships_path, notice: "Friendship created"
-    else
-      render 'friendships'
-    end
+    @friendship.save
+    redirect_to feedback_chat_session_path(params[:chat_session_id]), notice: "Friendship request sent"
   end
 
   def edit
@@ -36,18 +35,18 @@ class FriendshipsController < ApplicationController
     else
       flash[:alert] = "This status is not valid, sorry 😢"
     end
-    redirect_to chat_sessions_path
+    redirect_to request.referrer
   end
 
   # notification on friendship request
   def requests
-    @pending_sent_requests = Friendship.where(user_id: current_user.id, status: "pending", accepted?: false)
-    @pending_received_requests = Friendship.where(friend_id: current_user.id, status: "pending", accepted?: false)
+    @pending_sent_requests = Friendship.where(user_id: current_user.id, status: "pending")
+    @pending_received_requests = Friendship.where(friend_id: current_user.id, status: "pending")
   end
 
   private
 
   def friendship_params
-    params.require(:friendship).permit(:friend_id, :status)
+    params.require(:friendship).permit(:user_id, :friend_id, :status)
   end
 end

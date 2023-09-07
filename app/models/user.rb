@@ -11,10 +11,10 @@ class User < ApplicationRecord
   has_many :invitations, dependent: :destroy
   has_many :invitations_received, class_name: 'Invitation', foreign_key: :invitee_id, dependent: :destroy
 
-  has_many :chat_session, through: :invitations, dependent: :destroy
+  # has_many :chat_sessions, -> { distinct }, through: :invitations, dependent: :destroy
 
-  has_many :friendships, dependent: :destroy
-  has_many :friends, through: :friendships
+  # has_many :friendships, dependent: :destroy
+  # has_many :friends, through: :friendships
 
   has_many :invitation_notifications, dependent: :destroy
 
@@ -34,4 +34,12 @@ class User < ApplicationRecord
   # validates :book_genres, presence: true
   # validates :movie_genres, presence: true
   # validates :favorite_animal, presence: true
+
+  def friendships
+    Friendship.where(user_id: id).or(Friendship.where(friend_id: id))
+  end
+
+  def chat_sessions
+    ChatSession.joins(:invitations).where(invitations: {user_id: id}).or(ChatSession.joins(:invitations).where(invitations: {invitee_id: id})).distinct
+  end
 end
