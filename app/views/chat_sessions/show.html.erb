@@ -4,20 +4,24 @@
   <div class="users_list">
     <div class="d-flex-column ">
       <% if @invitations.all?(&:accepted?) %>
-        <%= link_to "Start mindful meet.", room_path(@chat_session.room_id), class: "button" %>
+      <div id="session_button">
+        <%= button_to "Start mindful meet.", room_path(@chat_session.room_id), class: "button" %>
+      </div>
       <% end %>
       <% @invitations.each do |invitation| %>
         <div class=" users d-flex align-items-center border border-secondary-subtle ">
           <p><%= cl_image_tag invitation.invitee.photo.key, class: "img_rounded"%></p>
-          <h1 class="p-3"><%= invitation.invitee.name  %></h1>
+          <h1 class="p-3 flex-fill"><%= invitation.invitee.name  %></h1>
           <% if invitation.pending? %>
-            <h4 class="p-3">Pending</h4>
+            <h5 class="p-1">Pending</h5>
           <% else %>
-            <h4 class="p-3">Accepted</h4>
+            <h5 class="p-1 ">Accepted</h5>
           <% end %>
         </div>
       <% end %>
     </div>
   </div>
-  <center><%= button_to "Update", chat_session_path(@chat_session.id), class: "button" %></center>
+  <div id="session_button">
+    <%= button_to "Update", chat_session_path(@chat_session.id), class: "button" %>
+  </div>
 </div>
