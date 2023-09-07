@@ -8,7 +8,7 @@ xxx remove column accepted from friends table and seed some accepted friendships
 find a better way to make the video chat  %>
 
 
-  <h1 id="chat_header">Past conversation</h1>
+  <h1 id="chat_header">Users</h1>
   <div id="chats">
     <% @friendships.each do |friendship| %>
       <div id="chat">
@@ -26,15 +26,7 @@ find a better way to make the video chat  %>
               <%= f.input :user_id, as: :hidden %>
               <%= f.input :friend_id, as: :hidden %>
               <input type="text" name="chat_session_id" value="<%= @chat_session.id %>" hidden="true">
-              <%= f.submit "Send request", class: "btn btn-primary" %>
-            <% end %>
-
-            <%= simple_form_for friendship do |f| %>
-              <%= f.input :status, input_html: {value: "declined"}, as: :hidden %>
-              <%= f.input :user_id, as: :hidden %>
-              <%= f.input :friend_id, as: :hidden %>
-              <input type="text" name="chat_session_id" value="<%= @chat_session.id %>" hidden="true">
-              <%= f.submit "Decline request", class: "btn btn-primary" %>
+              <%= f.submit "Friendship Request", class: "button_requests" %>
             <% end %>
 
             <%= simple_form_for friendship do |f| %>
@@ -42,7 +34,7 @@ find a better way to make the video chat  %>
               <%= f.input :user_id, as: :hidden %>
               <%= f.input :friend_id, as: :hidden %>
               <input type="text" name="chat_session_id" value="<%= @chat_session.id %>" hidden="true">
-              <%= f.submit "Block request", class: "btn btn-primary" %>
+              <%= f.submit "Block User", class: "button_requests" %>
             <% end %>
           <% end %>
         </div>
