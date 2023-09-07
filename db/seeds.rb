@@ -371,24 +371,7 @@ santi = User.new(
 santi.photo.attach(io: file, filename: "santi.jpg", content_type: "image/jpg")
 santi.save
 
-file = URI.open("https://kitt.lewagon.com/placeholder/users/lamoureuxmarie")
-marie = User.new(
-  name: "Marie Lamoureux",
-  username: "Marie",
-  biography: "A french coding specialist yuhuhu 💃",
-  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
-  city: Faker::Address.city,
-  hobbies: Faker::Hobby.activity,
-  music_genres: Faker::Music.genre,
-  book_genres: Faker::Book.genre,
-  movie_genres: Faker::Movie.title,
-  favorite_animal: Faker::Creature::Animal.name,
-  email: "marie@test.com",
-  password: "123456"
-  )
-marie.photo.attach(io: file, filename: "marie.jpg", content_type: "image/jpg")
-marie.save
+
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/jhibbeard89")
 james = User.new(
