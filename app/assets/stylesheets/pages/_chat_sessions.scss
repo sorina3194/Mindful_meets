@@ -7,8 +7,8 @@
   justify-content: center;
   align-items:start;
   font-family:'Nunito Sans', sans-serif;
-  font-weight:bold;
   margin-top:60px;
+  padding: 10px;
 }
 
 #chat-time{
@@ -22,6 +22,8 @@
   justify-content: center;
   padding-top:30px;
   padding-bottom: 60px;
+
+
 }
 
 #chat {
@@ -29,7 +31,7 @@
   padding-bottom:20px;
   width:350px;
   margin-bottom:10px;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 254, 254, 0.495);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   backdrop-filter: blur(6.9px);
@@ -38,10 +40,12 @@
 }
 
 #invitee{
-  margin-top:20px;
-  margin-bottom:20px;
-  font-size:30px;
-  font-family:'Nunito Sans', sans-serif;
+  margin-top:40px;
+  margin-bottom:40px;
+}
+
+#invitee-name{
+  font-size:17px;
 }
 
 #buttons {
@@ -54,4 +58,12 @@
   background-color: #B1CCCC ;
   border-radius: 20px;
   border-color: #B1CCCC;
+}
+
+#mindful-user{
+  font-size: 15px;
+}
+
+#mindful-pfp{
+  margin-bottom:20px;
 }

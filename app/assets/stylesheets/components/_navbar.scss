@@ -122,7 +122,7 @@
   backdrop-filter: blur(15.7px);
   -webkit-backdrop-filter: blur(15.7px);
   width: 360px;
-  height: 200px;
+  height: 250px;
   display: flex;
   flex: none;
   align-items: center;
@@ -172,8 +172,8 @@
   position: absolute;
   top: 5px;
   right: -60px;
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   background: red;
   color: #ffffff;
   display: flex;
@@ -184,4 +184,8 @@
 
 #badge{
   color:red;
+}
+
+#box{
+  padding-top:20px;
 }

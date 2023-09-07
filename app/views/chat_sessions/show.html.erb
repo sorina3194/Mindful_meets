@@ -5,13 +5,13 @@
     <div class="d-flex-column ">
       <% if @invitations.all?(&:accepted?) %>
       <div id="session_button">
-        <%= link_to "Start mindful meet.", room_path(@chat_session.room_id) %>
+        <%= link_to "Start a Mindful Meet.", room_path(@chat_session.room_id) %>
       </div>
       <% end %>
       <% @invitations.each do |invitation| %>
         <div class=" users d-flex align-items-center border border-secondary-subtle ">
-          <p><%= cl_image_tag invitation.invitee.photo.key, class: "img_rounded"%></p>
-          <h1 class="p-3 flex-fill"><%= invitation.invitee.name  %></h1>
+          <p id="mindful-pfp"><%= cl_image_tag invitation.invitee.photo.key, class: "img_rounded"%></p>
+          <h1 id="mindful-user"class="p-3 flex-fill"><%= invitation.invitee.name  %></h1>
           <% if invitation.pending? %>
             <h5 class="p-1">Pending</h5>
           <% else %>
