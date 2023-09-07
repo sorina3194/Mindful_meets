@@ -1,0 +1,12 @@
+default:
+  site: "mindful meets."
+  description: "connect like-minded people."
+  keywords: "mindful, friends, people, happiness, social anxiety"
+
+# Add more meta tags for subpages
+
+# articles:
+#   show:
+#     title: "Article Title"
+#     description: "Article Description"
+#     keywords: "article, keywords"
