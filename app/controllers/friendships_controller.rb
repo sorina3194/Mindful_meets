@@ -4,6 +4,7 @@ class FriendshipsController < ApplicationController
 
   def index
     @friendships = current_user.friendships
+    @received_friendship_requests = current_user.friendships.pending.where(friend_id: current_user.id)
 
     # @chat_session = ChatSession.where(user_id: current_user.id)
     # @invitations = @chat_session.invitations.where.not(invitee_id: current_user.id)
