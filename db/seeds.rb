@@ -181,25 +181,6 @@ brett = User.new(
 brett.photo.attach(io: file, filename: "brett.jpg", content_type: "image/jpg")
 brett.save
 
-file = URI.open("https://kitt.lewagon.com/placeholder/users/ozgekilic96")
-ozge = User.new(
-  name: "Ozge Kilic",
-  username: "Ozge",
-  biography: "Hello, I am Ozge 🦸🏼‍♀️",
-  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
-  city: Faker::Address.city,
-  hobbies: Faker::Hobby.activity,
-  music_genres: Faker::Music.genre,
-  book_genres: Faker::Book.genre,
-  movie_genres: Faker::Movie.title,
-  favorite_animal: Faker::Creature::Animal.name,
-  email: "ozge@test.com",
-  password: "123456"
-  )
-ozge.photo.attach(io: file, filename: "ozge.jpg", content_type: "image/jpg")
-ozge.save
-
 file = URI.open("https://kitt.lewagon.com/placeholder/users/IreneMancebo")
 irene = User.new(
   name: "Irene Martínez Mancebo",
@@ -237,44 +218,6 @@ marcel = User.new(
   )
 marcel.photo.attach(io: file, filename: "marcel.jpg", content_type: "image/jpg")
 marcel.save
-
-file = URI.open("https://kitt.lewagon.com/placeholder/users/sebaspont")
-sebastian = User.new(
-  name: "Sebastian Pont Vergés",
-  username: "Sebastian",
-  biography: "Hello, I am sebastian 🧑🏽‍💻",
-  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
-  city: Faker::Address.city,
-  hobbies: Faker::Hobby.activity,
-  music_genres: Faker::Music.genre,
-  book_genres: Faker::Book.genre,
-  movie_genres: Faker::Movie.title,
-  favorite_animal: Faker::Creature::Animal.name,
-  email: "sebastian@test.com",
-  password: "123456"
-  )
-sebastian.photo.attach(io: file, filename: "sebastian.jpg", content_type: "image/jpg")
-sebastian.save
-
-file = URI.open("https://kitt.lewagon.com/placeholder/users/iyayi2")
-iyayi = User.new(
-  name: "Iyayi Roland",
-  username: "Iyayi",
-  biography: "Hello, I am Iyayi 👨🏾‍💻",
-  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
-  city: Faker::Address.city,
-  hobbies: Faker::Hobby.activity,
-  music_genres: Faker::Music.genre,
-  book_genres: Faker::Book.genre,
-  movie_genres: Faker::Movie.title,
-  favorite_animal: Faker::Creature::Animal.name,
-  email: "iyayi@test.com",
-  password: "123456"
-  )
-iyayi.photo.attach(io: file, filename: "iyayi.jpg", content_type: "image/jpg")
-iyayi.save
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/nadjajr")
 nadja = User.new(
@@ -352,43 +295,6 @@ pedro = User.new(
 pedro.photo.attach(io: file, filename: "pedro.jpg", content_type: "image/jpg")
 pedro.save
 
-file = URI.open("https://kitt.lewagon.com/placeholder/users/santiagosan93")
-santi = User.new(
-  name: "Santiago Sanchez",
-  username: "Santi",
-  biography: "Let us rock, I am the best coding hero 🚀",
-  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
-  city: Faker::Address.city,
-  hobbies: Faker::Hobby.activity,
-  music_genres: Faker::Music.genre,
-  book_genres: Faker::Book.genre,
-  movie_genres: Faker::Movie.title,
-  favorite_animal: Faker::Creature::Animal.name,
-  email: "santi@test.com",
-  password: "123456"
-  )
-santi.photo.attach(io: file, filename: "santi.jpg", content_type: "image/jpg")
-santi.save
-
-file = URI.open("https://kitt.lewagon.com/placeholder/users/lamoureuxmarie")
-marie = User.new(
-  name: "Marie Lamoureux",
-  username: "Marie",
-  biography: "A french coding specialist yuhuhu 💃",
-  age: [18, 21, 24, 27, 30, 33, 36, 39, 44, 45, 48, 52, 55, 58, 62, 65].sample,
-  skills: ["Eating 🥣", "Coding 👩🏻‍💻", "Sometimes yoga, but very seldomly 🧘🏿‍♂️", "Sleeping 🛌", "Boxing 🥊", "Collecting stamps 🚀", "Visualise things 👀", "Reading cards 🔮", "Climbing trees 🌳", "Playing ukulele 🪕", "Being stressed all the time 🚧"].sample,
-  city: Faker::Address.city,
-  hobbies: Faker::Hobby.activity,
-  music_genres: Faker::Music.genre,
-  book_genres: Faker::Book.genre,
-  movie_genres: Faker::Movie.title,
-  favorite_animal: Faker::Creature::Animal.name,
-  email: "marie@test.com",
-  password: "123456"
-  )
-marie.photo.attach(io: file, filename: "marie.jpg", content_type: "image/jpg")
-marie.save
 
 file = URI.open("https://kitt.lewagon.com/placeholder/users/jhibbeard89")
 james = User.new(
@@ -503,7 +409,7 @@ zuzanna = User.new(
   book_genres: ["Romance ❤️‍🔥", "Crime 🦹🏼‍♂️", "Classics 📚"].sample,
   movie_genres: ["Romance 💝", "Crime 🦹‍♀️", "Classics 🎥", "Action 🏎️"].sample,
   favorite_animal: "My three 🐶",
-  email: "zuza@test.com",
+  email: "zuzanna@test.com",
   password: "123456"
 )
 zuzanna.photo.attach(io: file, filename: "zuzanna.png", content_type: "image/png")
@@ -570,44 +476,9 @@ emma.save
 
 puts "#{User.count} users in database"
 
-# Friendships
-# friendship = Friendship.create(user: zuzanna, friend: emma, status: "pending", accepted?: false)
-# friendship1 = Friendship.create(user: zuzanna, friend: olivia, status: "pending", accepted?: false)
-# friendship3 = Friendship.create(user: zuzanna, friend: nessim, status: "accepted", accepted?: true)
-
-# Rooms
-# room1 = Room.create(name: "Mindful Room 1", vonage_session_id: "1")
-# room2 = Room.create(name: "Mindful Room 2", vonage_session_id: "2")
-
-# # ChatSessions
-# chatsession1 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room1.id)
-# chatsession2 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
-# chatsession3 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
-# chatsession4 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
-# chatsession5 = ChatSession.create(invitations_count: 3, video_chat_link: "zoom.com", status: "completed", room_id: room2.id)
-
-# Invitations
-# invitations1 = Invitation.new(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: zuzanna.id, invitee_id: brunna.id, chat_session_id: chatsession1.id)
-# invitations1.save!
-
-# invitations2 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: zuzanna.id, invitee_id: emma.id, chat_session_id: chatsession1.id)
-# invitations3 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: zuzanna.id, invitee_id: sorina.id, chat_session_id: chatsession1.id)
-# invitations4 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: zuzanna.id, invitee_id: nessim.id, chat_session_id: chatsession1.id)
-
-# invitations5 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: emma.id, invitee_id: zuzanna.id, chat_session_id: chatsession2.id)
-# invitations6 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "pending", user_id: brunna.id, invitee_id: zuzanna.id, chat_session_id: chatsession3.id)
-# invitations7 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: sorina.id, invitee_id: zuzanna.id, chat_session_id: chatsession4.id)
-# invitations8 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: nessim.id, invitee_id: zuzanna.id, chat_session_id: chatsession5.id)
-
-friendship = Friendship.create(user: sorina, friend: emma, status: "accepted")
-friendship1 = Friendship.create(user: sorina, friend: olivia, status: "accepted")
-friendship3 = Friendship.create(user: sorina, friend: brunna, status: "accepted")
-friendship4 = Friendship.create(user: sorina, friend: nessim, status: "accepted")
-friendship5 = Friendship.create(user: zuzanna, friend: nessim, status: "pending")
-friendship6 = Friendship.create(user: zuzanna, friend: emma, status: "pending")
-friendship7 = Friendship.create(user: zuzanna, friend: brunna, status: "pending")
-friendship8 = Friendship.create(user: zuzanna, friend: farah, status: "pending")
-friendship9 = Friendship.create(user: zuzanna, friend: joel, status: "pending")
-friendship9 = Friendship.create(user: joel, friend: zuzanna, status: "pending")
+Friendship.create(user: sorina, friend: emma, status: "accepted")
+Friendship.create(user: sorina, friend: olivia, status: "accepted")
+Friendship.create(user: sorina, friend: brunna, status: "accepted")
+Friendship.create(user: sorina, friend: nessim, status: "accepted")
 
 puts 'Seeds are planted! 🌱🌱🌱'
