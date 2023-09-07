@@ -141,3 +141,27 @@ input[id="radio-3"] {
   font-weight:bold;
   color: rgb(112, 112, 112);
 }
+
+#friendships-whole{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#friend{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  margin-right: 40px;
+  margin-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius:30px;
+  background-color:whitesmoke;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#friend-name{
+  margin-left:15px;
+}

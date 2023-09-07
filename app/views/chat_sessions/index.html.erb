@@ -8,7 +8,7 @@
         <h4 id=chat-time><%= chat.created_at.strftime("%B %d, %Y") %></h4>
         <% chat.invitations.each do |invitation| %>
           <div id="invitee">
-            <%= cl_image_tag invitation.invitee.photo.key, class: "img_rounded"%></p>
+            <%= cl_image_tag invitation.invitee.photo.key, class: "img_rounded"%>
             <%= invitation.invitee.name %>
           </div>
         <% end %>
@@ -16,4 +16,3 @@
     <% end %>
   </div>
 </div>
-
