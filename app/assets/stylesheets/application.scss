@@ -12,29 +12,17 @@
 @import "pages/index";
 @import "components/mindful_meet";
 
-#content {
-  width: 100%;
-  padding: 20px;
-}
-
-/* Media query for larger screens */
-@media (min-width: 768px) {
-  #content {
-    width: 60%;
-    margin: 0 auto;
-    padding: 40px;
-  }
-}
 
 body {
   background-color:#B1CCCC;
-  min-height: 100vh;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: column;
+  // justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
 }
+
 main {
   flex-grow: 1;
+  min-height: 100vh;
   overflow-y: auto; /* Add scrollbar if content overflows */
 }
 
@@ -43,6 +31,7 @@ main {
   flex-direction: column;
   gap: 2rem;
 }
+
 .OT_root {
   height: 240px !important;
 }
