@@ -599,10 +599,9 @@ puts "#{User.count} users in database"
 # invitations7 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: sorina.id, invitee_id: zuzanna.id, chat_session_id: chatsession4.id)
 # invitations8 = Invitation.create(video_chat_link: "zoom.com/chatlink", name: "Mindful Meeting", status: "accepted", user_id: nessim.id, invitee_id: zuzanna.id, chat_session_id: chatsession5.id)
 
-
-friendship = Friendship.create(user: zuzanna, friend: emma, status: "accepted")
-friendship1 = Friendship.create(user: sorina, friend: sorina, status: "accepted")
-friendship3 = Friendship.create(user: nessim, friend: brunna, status: "accepted")
-
+friendship = Friendship.create(user: sorina, friend: emma, status: "accepted")
+friendship1 = Friendship.create(user: sorina, friend: olivia, status: "accepted")
+friendship3 = Friendship.create(user: sorina, friend: brunna, status: "accepted")
+friendship4 = Friendship.create(user: sorina, friend: nessim, status: "accepted")
 
 puts 'Seeds are planted! 🌱🌱🌱'

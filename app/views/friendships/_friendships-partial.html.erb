@@ -7,6 +7,7 @@
           <div id="friend">
             <%= cl_image_tag friendship.friend.photo.key, class: "img_rounded"%>
             <%= friendship.friend.name%>
+            <%= link_to "Profile" , showprofile_path(friendship.friend.id) %>
           </div>
         <% end %>
       <% end %>

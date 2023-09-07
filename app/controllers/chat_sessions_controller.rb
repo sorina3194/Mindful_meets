@@ -49,7 +49,7 @@ class ChatSessionsController < ApplicationController
   def finish
     @chat_session = ChatSession.find(params[:id])
     @chat_session.completed!
-    redirect_to root_path
+    redirect_to feedback_chat_session_path(current_user.chat_sessions.last)
   end
 
   def feedback
