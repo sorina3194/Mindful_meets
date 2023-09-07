@@ -601,8 +601,8 @@ puts "#{User.count} users in database"
 
 
 friendship = Friendship.create(user: zuzanna, friend: emma, status: "accepted")
-friendship1 = Friendship.create(user: sorina, friend: olivia, status: "accepted")
-friendship3 = Friendship.create(user: brunna, friend: nessim, status: "accepted")
+friendship1 = Friendship.create(user: sorina, friend: sorina, status: "accepted")
+friendship3 = Friendship.create(user: nessim, friend: brunna, status: "accepted")
 
 
 puts 'Seeds are planted! 🌱🌱🌱'
