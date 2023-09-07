@@ -7,8 +7,9 @@
           <% friendships.accepted.each do |friendship| %>
             <div class="d-flex justify-content-between">
               <ul>
-                  <li class="ml-auto whitesmoke-background"><%= friendship.user.name%></li>
+                  <li class="ml-auto whitesmoke-background"><%= friendship.friend.name%></li>
               </ul>
+              <%= link_to "Profile" , showprofile_path(friendship.friend.id) %>
             </div>
           <% end %>
         </div>
