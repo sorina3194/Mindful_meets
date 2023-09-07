@@ -11,7 +11,7 @@
             <% if user_signed_in? %>
               <% if InvitationNotification.where(user_id: current_user.id).present? %>
                 <li class="nav-item">
-                  <%= link_to "Invitations", invitations_path, class:"dropdown-item"%><div id="badge"></div>
+                  <%= link_to "Invitations", invitations_path, class:"dropdown-item", style:"color:red"%><div id="badge"></div>
                 </li>
               <% else %>
                 <li class="nav-item">
