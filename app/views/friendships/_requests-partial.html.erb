@@ -7,14 +7,10 @@ display friendships on the friendslist and a button that directs to the users pr
 xxx remove column accepted from friends table and seed some accepted friendships and some more users...
 find a better way to make the video chat  %>
   <div id="chats">
-    <% @friendships.pending.each do |friendship| %>
+    <% @received_friendship_requests.each do |friendship| %>
       <div id="chat">
         <div id="invitee">
-        <% if current_user.name == friendship.friend.name %>
-            <%= friendship.user.name %>
-        <% else %>
-            <%= friendship.friend.name %>
-        <% end %>
+          <%= friendship.user.name %>
         </div>
         <div id="buttons">
           <% if friendship.pending? %>
