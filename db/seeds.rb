@@ -606,5 +606,8 @@ friendship4 = Friendship.create(user: sorina, friend: nessim, status: "accepted"
 friendship5 = Friendship.create(user: zuzanna, friend: nessim, status: "pending")
 friendship6 = Friendship.create(user: zuzanna, friend: emma, status: "pending")
 friendship7 = Friendship.create(user: zuzanna, friend: brunna, status: "pending")
+friendship8 = Friendship.create(user: zuzanna, friend: farah, status: "pending")
+friendship9 = Friendship.create(user: zuzanna, friend: joel, status: "pending")
+friendship9 = Friendship.create(user: joel, friend: zuzanna, status: "pending")
 
 puts 'Seeds are planted! 🌱🌱🌱'

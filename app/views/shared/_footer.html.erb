@@ -11,19 +11,17 @@
   <%# My Friends %>
   <%# Notification goes here %>
 
-  <% if current_user.friendships.where(status: "pending") %>
-    <%= link_to friendships_path, style:"color:red" do %>
-      <span id="badge" class="material-symbols-outlined" <% link_to "Friendships" %>>
-        diversity_2
-      </span>
-    <% end %>
-  <% else %>
     <%= link_to friendships_path do %>
-      <span class="material-symbols-outlined" <% link_to "Friendships" %>>
-        diversity_2
-      </span>
+      <% if user_signed_in? %>
+        <% friendships = current_user.friendships.where(friend_id: current_user.id, status: "pending") %>
+        <% if friendships.count > 0 %>
+          <div id="friendship-notification"><%= friendships.count %></div>
+        <% end %>
+      <% end %>
+        <span class="material-symbols-outlined" <% link_to "Friendships" %>>
+          diversity_2
+        </span>
     <% end %>
-  <% end %>
 
   <%# My Profile %>
   <% if user_signed_in? %>
