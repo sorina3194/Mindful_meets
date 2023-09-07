@@ -1,4 +1,4 @@
-<h1 class="p-4 m-4">Mindful Meet</h1>
+<h1 class="p-3 m-3">Mindful Meet</h1>
 <div id="videos"
 data-controller="vonage"
 data-vonage-api-key="47771161"
@@ -9,5 +9,5 @@ data-vonage-name="<%= current_user.name %>">
 
 <%# <%= link_to "End Chat Session", finishchat_path(@chat_session), method: "post" %>
 <div id="end_chat">
-<%= link_to "End Chat Session", finish_chat_session_path(@chat_session), data: {turbo_method: :patch} %>
+<%= link_to "End Chat Session", root_path, data: {turbo_method: :patch} %>
 </div>
