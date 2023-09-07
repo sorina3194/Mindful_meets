@@ -5,6 +5,9 @@
   text-align: center;
 }
 
+.carousel-item{
+  border-radius:20px;
+}
 .profile-center-details{
   text-align: center;
   padding: 1rem;
@@ -27,12 +30,12 @@
 }
 
 #profile-backround{
-  background-color: #B1CCCC;
+  background-color: whitesmoke;
   text-align: center;
 }
 
 #text_profile{
-  color: #6a8e8e;
+  color: whitesmoke;
   font-size: 20px;
   font-weight: bold;
 }

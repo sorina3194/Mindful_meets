@@ -160,8 +160,16 @@ input[id="radio-3"] {
   border-radius:30px;
   background-color:whitesmoke;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-family: 'Nunito', sans-serif;
 }
 
-#friend-name{
-  margin-left:15px;
+.img_rounded{
+  margin-right:15px;
+}
+
+#profile-button{
+  background-color: #b1cccc;
+  margin-left:10px;
+  padding:10px;
+  border-radius:20px;
 }

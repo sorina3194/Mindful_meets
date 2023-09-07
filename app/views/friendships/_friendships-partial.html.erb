@@ -3,12 +3,14 @@
   <div class="col-md-6 mt-5">
     <% if friendships.present? %>
       <% friendships.accepted.each do |friendship| %>
+        <%= link_to showprofile_path(friendship.friend.id) do %>
           <div id="friend">
             <%= cl_image_tag friendship.friend.photo.key, class: "img_rounded"%>
             <%= friendship.friend.name%>
             <%= link_to "Profile" , showprofile_path(friendship.friend.id) %>
           </div>
         <% end %>
+      <% end %>
   </div>
     <% else %>
       <h4 id='loneliness'>Build your social network!</h4>
