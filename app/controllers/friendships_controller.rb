@@ -15,7 +15,7 @@ class FriendshipsController < ApplicationController
   def create
     @friendship = Friendship.new(friendship_params)# (friendship_params)
     @friendship.save
-    if @friendship.status == "accepted"
+    if @friendship.status == "pending"
       redirect_to feedback_chat_session_path(params[:chat_session_id]), notice: "Friendship request sent"
     else
       redirect_to feedback_chat_session_path(params[:chat_session_id]), notice: "User blocked"
