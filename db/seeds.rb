@@ -476,9 +476,4 @@ emma.save
 
 puts "#{User.count} users in database"
 
-Friendship.create(user: sorina, friend: emma, status: "accepted")
-Friendship.create(user: sorina, friend: olivia, status: "accepted")
-Friendship.create(user: sorina, friend: brunna, status: "accepted")
-Friendship.create(user: sorina, friend: nessim, status: "accepted")
-
 puts 'Seeds are planted! 🌱🌱🌱'
