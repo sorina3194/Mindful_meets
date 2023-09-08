@@ -11,13 +11,13 @@ find a better way to make the video chat  %>
   <div id="users">
     <% @friendships.each do |friendship| %>
       <div id="user">
-        <div id="bff">
-         <p id="pfp"> <%= cl_image_tag friendship.friend.photo.key, class: "img_rounded w-50 h-50"%></p>
-          <% if current_user.name == friendship.friend.name %>
-             <p id="username"> <%= friendship.user.name %></p>
-          <% else %>
-              <%= friendship.friend.name %>
-          <% end %>
+        <div class ="bff">
+          <%= cl_image_tag friendship.friend.photo.key, class: "img_rounded w-50 h-50"%>
+            <% if current_user.name == friendship.friend.name %>
+              <p id="username"> <%= friendship.user.name %></p>
+            <% else %>
+                <%= friendship.friend.name %>
+            <% end %>
         </div>
         <div id="buttons">
           <% unless friendship.persisted? %>
